@@ -40,6 +40,27 @@ jobs:
           done
 
       - run: |
+          rm -rf surge/rules/{source,merged}
+          mkdir -p surge/rules/{source,merged}
+
+      - run: |
+          yq -r '.rules[] | .name + " " + (.remote[]? // "")' surge/rules/manifest.yml \
+          | xargs -n 2 -P 10 sh -c 'mkdir -p surge/rules/source/$1; curl -L "$2" -o surge/rules/source/$1/${2##*/}' sh
+
+      - run: |
+          for d in surge/rules/source/*; do
+            outfile="surge/rules/merged/${d##*/}.list"
+            > "$outfile"
+
+            yq -r ".rules[] | select(.name == \"${d##*/}\") | .local[]?" surge/rules/manifest.yml \
+              >> "$outfile"
+
+            grep -hv '^#' "$d"/*.list \
+              | sort -u \
+              >> "$outfile"
+          done
+
+      - run: |
           rm -rf quantumultx/rules/{source,merged}
           mkdir -p quantumultx/rules/{source,merged}
 
@@ -49,15 +70,15 @@ jobs:
 
       - run: |
           for d in quantumultx/rules/source/*; do
-            output_file="quantumultx/rules/merged/${d##*/}.list"
-            > "$output_file"
+            outfile="quantumultx/rules/merged/${d##*/}.list"
+            > "$outfile"
 
             yq -r ".rules[] | select(.name == \"${d##*/}\") | .local[]?" quantumultx/rules/manifest.yml \
-              >> "$output_file"
+              >> "$outfile"
 
             grep -hv '^#' "$d"/*.list \
               | sort -u \
-              >> "$output_file"
+              >> "$outfile"
           done
 
       - run: |
