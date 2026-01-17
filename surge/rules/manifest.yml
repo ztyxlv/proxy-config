@@ -75,9 +75,9 @@ rules:
     remote:
       - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list"
 
-  - name: GoogleVoice
-    local:
-      - DOMAIN-SUFFIX,voice.google.com
+  # - name: GoogleVoice
+  #   local:
+  #     - DOMAIN-SUFFIX,voice.google.com
 
   - name: Google
     remote: 
