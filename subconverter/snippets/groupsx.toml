@@ -1,0 +1,74 @@
+[[custom_groups]]
+name = "Gaming"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "Streaing"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "Messaging"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "Finance"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "Commerce"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "Commerce"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "Intelligence"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "GlobalMedia"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "ChinaMedia"
+type = "select"
+rule = ["[]DirectX", ".*", "[]RejectX"]
+
+[[custom_groups]]
+name = "Microsoft"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "Google"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "Apple"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "ProxyX"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "DirectX"
+type = "select"
+rule = ["[]DIRECT", ".*", "[]REJECT"]
+
+[[custom_groups]]
+name = "RejectX"
+type = "select"
+rule = ["[]REJECT", ".*", "[]DIRECT"]

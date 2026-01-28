@@ -1,0 +1,108 @@
+allow-lan: true
+bind-address: "*"
+lan-allowed-ips: ["127.0.0.1/8", "192.168.31.0/24"]
+lan-disallowed-ips: []
+
+authentication: ["yhmwwl:mmwywl"]
+skip-auth-prefixes: ["127.0.0.1/8", "192.168.31.0/24"]
+
+mode: rule
+
+log-level: warning
+
+ipv6: false
+
+keep-alive-interval: 30
+keep-alive-idle: 180
+disable-keep-alive: false
+
+find-process-mode: strict
+
+# external-controller: 127.0.0.1:9090
+# external-controller-cors:
+#   allow-origins: []
+#   allow-private-network: true
+# secret: "myfwmy"
+
+# external-ui: ./ui
+
+# external-ui-name: xd
+
+# external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+unified-delay: true
+
+tcp-concurrent: false
+
+# interface-name: eth0
+
+# routing-mark: 6666
+
+geodata-mode: false
+
+geodata-loader: memconservative
+
+geo-auto-update: true
+geo-update-interval: 168
+
+geox-url:
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
+  asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+
+global-ua: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+
+etag-support: true
+
+dns:
+  enable: true
+  cache-algorithm: arc
+  prefer-h3: false
+  listen: 127.0.0.1:1053
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/15
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter: ["*.lan", "*.local", "*.home.arpa", "*.localhost", "time.*.com", "ntp.*.com", "+.pool.ntp.org", "stun.*.*", "stun.*.*.*", "*.msftncsi.com", "*.msftconnecttest.com"]
+  use-hosts: true
+  use-system-hosts: true
+  respect-rules: false
+  default-nameserver: ["223.5.5.5", "119.29.29.29"]
+  proxy-server-nameserver: ["223.5.5.5", "119.29.29.29"]
+  direct-nameserver: ["223.5.5.5", "119.29.29.29"]
+  direct-nameserver-follow-policy: false
+  nameserver: ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query"]
+  fallback: ["https://dns.google/dns-query", "https://dns.cloudflare.com/dns-query"]
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr: []
+    domain: []
+
+# port: 7890
+# socks-port: 7891
+mixed-port: 7892
+# redir-port: 7893
+# tproxy-port: 7894
+
+tun:
+  enable: false
+  stack: mixed
+  device: shadow
+  auto-route: true
+  # auto-redirect: true
+  auto-detect-interface: true
+  dns-hijack: ["udp://any:53"]
+  strict-route: true
+  mtu: 1480
+  # gso: true
+  # gso-max-size: 65536
+  udp-timeout: 300
+  iproute2-table-index: 2022
+  iproute2-rule-index: 9000
+  endpoint-independent-nat: false

@@ -1,0 +1,85 @@
+[[rulesets]]
+group = "[]DirectX"
+ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/whitelist.yaml"
+type = "clash-classic"
+interval = 86400
+
+# [[rulesets]]
+# group = "[]RejectX"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/reject.yaml"
+
+# [[rulesets]]
+# group = "[]DirectX"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/direct.yaml"
+
+# [[rulesets]]
+# group = "[]Gaming"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/gaming.yaml"
+
+# [[rulesets]]
+# group = "[]Streaming"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/streaming.yaml"
+
+# [[rulesets]]
+# group = "[]Messaging"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/messaging.yaml"
+
+# [[rulesets]]
+# group = "[]JP Nodes"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/cryptoexchange.yaml"
+
+# [[rulesets]]
+# group = "[]Finance"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/finance.yaml"
+
+# [[rulesets]]
+# group = "[]Commerce"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/commerce.yaml"
+
+# [[rulesets]]
+# group = "[]Intelligence"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/intelligence.yaml"
+
+# [[rulesets]]
+# group = "[]HK Nodes"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/youtube.yaml"
+
+# [[rulesets]]
+# group = "[]US Nodes"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/spotify.yaml"
+
+# [[rulesets]]
+# group = "[]GlobalMedia"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/globalmedia.yaml"
+
+# [[rulesets]]
+# group = "[]ChinaMedia"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/chinamedia.yaml"
+
+# [[rulesets]]
+# group = "[]Microsoft"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/microsoft.yaml"
+
+# [[rulesets]]
+# group = "[]US Nodes"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/googlevoice.yaml"
+
+# [[rulesets]]
+# group = "[]Google"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/google.yaml"
+
+# [[rulesets]]
+# group = "[]Apple"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/apple.yaml"
+
+# [[rulesets]]
+# group = "[]US Nodes"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/nike.yaml"
+
+# [[rulesets]]
+# group = "[]ProxyX"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/proxy.yaml"
+
+# [[rulesets]]
+# group = "[]DirectX"
+# ruleset = "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/clash/rules/merged/directx.yaml"
