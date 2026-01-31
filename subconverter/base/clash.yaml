@@ -1,10 +1,10 @@
 allow-lan: true
 bind-address: "*"
-lan-allowed-ips: ["127.0.0.1/8", "192.168.31.0/24"]
+lan-allowed-ips: []
 lan-disallowed-ips: []
 
-authentication: ["yhmwwl:mmwywl"]
-skip-auth-prefixes: ["127.0.0.1/8", "192.168.31.0/24"]
+authentication: []
+skip-auth-prefixes: []
 
 mode: rule
 
@@ -22,7 +22,7 @@ find-process-mode: strict
 # external-controller-cors:
 #   allow-origins: []
 #   allow-private-network: true
-# secret: "myfwmy"
+# secret: ""
 
 # external-ui: ./ui
 
@@ -47,13 +47,13 @@ geodata-mode: false
 geodata-loader: memconservative
 
 geo-auto-update: true
-geo-update-interval: 168
+geo-update-interval: 24
 
 geox-url:
-  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
-  asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+  geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/geoip.dat"
+  geosite: "https://cdn.jsdelivr.net/gh/v2fly/domain-list-community@release/dlc.dat"
+  mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country-without-asn.mmdb"
+  asn: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
 
 global-ua: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
 
@@ -77,7 +77,7 @@ dns:
   direct-nameserver: ["223.5.5.5", "119.29.29.29"]
   direct-nameserver-follow-policy: false
   nameserver: ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query"]
-  fallback: ["https://dns.google/dns-query", "https://dns.cloudflare.com/dns-query"]
+  fallback: ["https://dns.cloudflare.com/dns-query", "https://dns.google/dns-query"]
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -93,7 +93,7 @@ mixed-port: 7892
 tun:
   enable: false
   stack: mixed
-  device: shadow
+  device: meta
   auto-route: true
   # auto-redirect: true
   auto-detect-interface: true
@@ -106,3 +106,10 @@ tun:
   iproute2-table-index: 2022
   iproute2-rule-index: 9000
   endpoint-independent-nat: false
+
+ntp:
+  enable: true
+  write-to-system: false
+  server: ntp.aliyun.com
+  port: 123
+  interval: 30

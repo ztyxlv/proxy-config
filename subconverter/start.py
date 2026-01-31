@@ -38,7 +38,7 @@ try:
 
   print("\nProfiles:")
   print("  Clash: http://127.0.0.1:25500/clash")
-  print("  Surge: http://127.0.0.1:25500/surge&ver=5&tfo=true")
+  print("  Surge: http://127.0.0.1:25500/surge")
   input("\nPress Enter to exit...")
 finally:
   sc_proc.terminate()

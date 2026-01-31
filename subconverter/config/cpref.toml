@@ -1,12 +1,10 @@
 version = 1
 [common]
 default_url = ["http://127.0.0.1:24776/clash.yaml"]
-
 default_external_config = "config/epref.toml"
 
 [node_pref]
 sort_flag = true
-
 sort_script = "path:./scripts/sort.js"
 
 clash_proxy_groups_style = "flow"
@@ -16,3 +14,7 @@ import = "snippets/renamex.toml"
 
 [managed_config]
 write_managed_config = false
+
+[[aliases]]
+uri = "/surge"
+target = "/sub?target=surge&ver=5&tfo=true"

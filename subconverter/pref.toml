@@ -7,7 +7,6 @@ api_mode = false
 api_access_token = "password"
 
 # Default URLs, used when no URL is provided in request, use "|" to separate multiple subscription links, supports local files/URL
-# default_url = []
 default_url = ["http://127.0.0.1:24776/clash.yaml"]
 
 # Insert subscription links to requests. Can be used to add node(s) to all exported subscriptions.
@@ -38,7 +37,7 @@ enable_filter = false
 #'''
 
 # Setting an external config file as default when none is specified, supports local files/URL
-# default_external_config = "config/example_external_config.toml"
+default_external_config = "config/epref.toml"
 
 # The file scope limit of the 'rule_base' options in external configs.
 base_path = "base"
@@ -123,7 +122,7 @@ replace = '$1:$2:$3:0:0:0'
 #skip_cert_verify_flag = false
 #tls13_flag = false
 
-sort_flag = false
+sort_flag = true
 # Script used for sorting nodes. A "compare" function with 2 arguments which are the 2 nodes to be compared should be defined in the script. Supports inline script and script path.
 # Examples can be seen at the filter_script option in [common] section.
 #sort_script = '''
@@ -131,6 +130,7 @@ sort_flag = false
 #   return info_a.Remark > info_b.Remark;
 #}
 #'''
+sort_script = "path:./scripts/sort.js"
 
 filter_deprecated_nodes = false
 append_sub_userinfo = true
@@ -143,18 +143,17 @@ clash_use_new_field_name = true
 #       - name: name2
 #         key: value
 clash_proxies_style = "flow"
-clash_proxy_groups_style = "block"
+clash_proxy_groups_style = "flow"
 
 # add Clash mode to sing-box rules, and add a GLOBAL group to end of outbounds
 singbox_add_clash_modes = true
 
 [[node_pref.rename_node]]
-match = '\(?((x|X)?(\d+)(\.?\d+)?)((\s?倍率?)|(x|X))\)?'
-replace = "$1x"
+import = "snippets/renamex.toml"
 
 [managed_config]
 # Append a '#!MANAGED-CONFIG' info to Surge configurations
-write_managed_config = true
+write_managed_config = false
 
 # Address prefix for MANAGED-CONFIG info, without the trailing "/".
 managed_config_prefix = "http://127.0.0.1:25500"
@@ -246,10 +245,6 @@ key = "clash.log_level"
 value = "info"
 
 [[template.globals]]
-key = "clash.external_controller"
-value = "127.0.0.1:9090"
-
-[[template.globals]]
 key = "singbox.allow_lan"
 value = "true"
 
@@ -267,7 +262,7 @@ target = "/sub?target=clashr"
 
 [[aliases]]
 uri = "/surge"
-target = "/sub?target=surge"
+target = "/sub?target=surge&ver=5&tfo=true"
 
 [[aliases]]
 uri = "/quan"
