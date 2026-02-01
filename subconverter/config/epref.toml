@@ -2,11 +2,5 @@ version = 1
 [custom]
 exclude_remarks = ["(Traffic|Date|GB \\||G \\||Premium)"]
 
-clash_rule_base = "base/clash.yaml"
-surge_rule_base = "base/surge.conf"
-
-[[custom_groups]]
-import = "snippets/groupsx.toml"
-
-[[rulesets]]
-import = "snippets/rulesetsx.toml"
+clash_rule_base = "base/clashx.yaml"
+surge_rule_base = "base/surgex.conf"

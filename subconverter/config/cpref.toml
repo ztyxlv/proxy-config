@@ -1,10 +1,12 @@
 version = 1
 [common]
 default_url = ["http://127.0.0.1:24776/clash.yaml"]
+
 default_external_config = "config/epref.toml"
 
 [node_pref]
 sort_flag = true
+
 sort_script = "path:./scripts/sort.js"
 
 clash_proxy_groups_style = "flow"
@@ -14,6 +16,12 @@ import = "snippets/renamex.toml"
 
 [managed_config]
 write_managed_config = false
+
+[[custom_groups]]
+import = "snippets/groupsx.toml"
+
+[[rulesets]]
+import = "snippets/rulesetsx.toml"
 
 [[aliases]]
 uri = "/surge"

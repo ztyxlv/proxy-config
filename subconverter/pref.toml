@@ -204,7 +204,7 @@ import = "snippets/emoji.toml"
 # url = "http://www.gstatic.com/generate_204"
 
 [[custom_groups]]
-import = "snippets/groups.toml"
+import = "snippets/groupsx.toml"
 
 [ruleset]
 # Enable generating rules with rulesets
@@ -223,7 +223,7 @@ update_ruleset_on_request = false
 # interval = 86400
 
 [[rulesets]]
-import = "snippets/rulesets.toml"
+import = "snippets/rulesetsx.toml"
 
 [template]
 template_path = ""
