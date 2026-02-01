@@ -1,0 +1,108 @@
+rules:
+  - name: direct
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Direct/Direct.list"
+
+  - name: reject
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AdvertisingLite/AdvertisingLite.list"
+
+  - name: gam
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/GameDownloadCN/GameDownloadCN.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/GameDownload/GameDownload.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list"
+
+  - name: vid
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AmazonPrimeVideo/AmazonPrimeVideo.list"
+
+  - name: yt
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list"
+
+  - name: sp
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list"
+
+  - name: gom
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"
+
+  - name: cnm
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list"
+
+  - name: msg
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Line/Line.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list"
+
+  - name: ais
+    local:
+      - DOMAIN-SUFFIX,pplx.ai
+      - DOMAIN-SUFFIX,perplexity.ai
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Claude/Claude.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Copilot/Copilot.list"
+
+  - name: gv
+    local:
+      - DOMAIN-SUFFIX,voice.google.com
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleVoice/GoogleVoice.list"
+
+  - name: ggl
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleFCM/GoogleFCM.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list"
+
+  - name: gh
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list"
+
+  - name: msf
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list"
+
+  - name: sr
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Siri/Siri.list"
+
+  - name: apl
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleID/AppleID.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleDev/AppleDev.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/SystemOTA/SystemOTA.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list"
+
+  - name: cex
+    local:
+      - DOMAIN-SUFFIX,binance.info
+      - DOMAIN-SUFFIX,htx.com
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Binance/Binance.list"
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OKX/OKX.list"
+
+  - name: fin
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PayPal/PayPal.list"
+
+  - name: eco
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Amazon/Amazon.list"
+
+  - name: nk
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Nike/Nike.list"
+
+  - name: directx
+    remote:
+      - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMax/ChinaMax.list"

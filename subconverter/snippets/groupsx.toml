@@ -1,0 +1,4 @@
+[[custom_groups]]
+name = "SCV"
+type = "select"
+rule = [".*"]
