@@ -1,6 +1,6 @@
 version = 1
 [custom]
-exclude_remarks = ["(Traffic|Date|GB \\||G \\||Premium)"]
+exclude_remarks = ["(Traffic|Date|GB \\||G \\||Premium|剩余|到期|直连)"]
 
 clash_rule_base = "base/clashx.yaml"
 surge_rule_base = "base/surgex.conf"

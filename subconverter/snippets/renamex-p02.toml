@@ -1,0 +1,75 @@
+[[rename_node]]
+match = "^专线 香港 "
+replace = "🇭🇰 HK P02 E"
+
+[[rename_node]]
+match = "^隧道 香港 "
+replace = "🇭🇰 HK P02 T"
+
+[[rename_node]]
+match = "^专线 新加坡 "
+replace = "🇸🇬 SG P02 E"
+
+[[rename_node]]
+match = "^隧道 新加坡 "
+replace = "🇸🇬 SG P02 T"
+
+[[rename_node]]
+match = "^专线 美国 "
+replace = "🇺🇸 US P02 E"
+
+[[rename_node]]
+match = "^隧道 美国 "
+replace = "🇺🇸 US P02 T"
+
+[[rename_node]]
+match = "^专线 韩国 "
+replace = "🇰🇷 KR P02 E"
+
+[[rename_node]]
+match = "^隧道 韩国 "
+replace = "🇰🇷 KR P02 T"
+
+[[rename_node]]
+match = "^专线 日本 "
+replace = "🇯🇵 JP P02 E"
+
+[[rename_node]]
+match = "^隧道 日本 "
+replace = "🇯🇵 JP P02 T"
+
+[[rename_node]]
+match = "^专线 卢森堡 "
+replace = "🇱🇺 LU P02 E"
+
+[[rename_node]]
+match = "^隧道 卢森堡 "
+replace = "🇱🇺 LU P02 T"
+
+[[rename_node]]
+match = "^专线 土耳其 "
+replace = "🇹🇷 TR P02 E"
+
+[[rename_node]]
+match = "^隧道 土耳其 "
+replace = "🇹🇷 TR P02 T"
+
+[[rename_node]]
+match = "^专线 马来西亚 "
+replace = "🇲🇾 MY P02 E"
+
+[[rename_node]]
+match = "^隧道 马来西亚 "
+replace = "🇲🇾 MY P02 T"
+
+[[rename_node]]
+match = "^专线 台湾 "
+replace = "🇹🇼 TW P02 E"
+
+[[rename_node]]
+match = "^隧道 台湾 "
+replace = "🇹🇼 TW P02 T"
+
+[[rename_node]]
+match = " \\| .*"
+replace = ""

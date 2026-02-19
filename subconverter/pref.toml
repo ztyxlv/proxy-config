@@ -125,11 +125,6 @@ replace = '$1:$2:$3:0:0:0'
 sort_flag = true
 # Script used for sorting nodes. A "compare" function with 2 arguments which are the 2 nodes to be compared should be defined in the script. Supports inline script and script path.
 # Examples can be seen at the filter_script option in [common] section.
-#sort_script = '''
-#function compare(node_a, node_b) {
-#   return info_a.Remark > info_b.Remark;
-#}
-#'''
 sort_script = "path:./scripts/sort.js"
 
 filter_deprecated_nodes = false
@@ -149,7 +144,7 @@ clash_proxy_groups_style = "flow"
 singbox_add_clash_modes = true
 
 [[node_pref.rename_node]]
-import = "snippets/renamex.toml"
+import = "snippets/renamex-p01.toml"
 
 [managed_config]
 # Append a '#!MANAGED-CONFIG' info to Surge configurations
@@ -254,7 +249,7 @@ value = "2080"
 
 [[aliases]]
 uri = "/clash"
-target = "/sub?target=clash"
+target = "/sub?target=clash&tfo=true"
 
 [[aliases]]
 uri = "/clashr"

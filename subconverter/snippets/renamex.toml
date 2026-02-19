@@ -23,15 +23,11 @@ match = "^(瑞典|Sweden)"
 replace = "🇸🇪 SE"
 
 [[rename_node]]
-match = "^Australia Sydney"
-replace = "🇦🇺 AU SYD"
-
-[[rename_node]]
 match = "^(澳大利亚|Australia)"
 replace = "🇦🇺 AU"
 
 [[rename_node]]
-match = "^(中国香港特别行政区|Hong Kong, China \\(SAR\\)|Hong Kong)"
+match = "^(中国香港特别行政区|Hong Kong, China \\(SAR\\))"
 replace = "🇭🇰 HK"
 
 [[rename_node]]
@@ -56,7 +52,7 @@ replace = "🇸🇬 SG"
 
 [[rename_node]]
 match = "^(英国|United Kingdom)"
-replace = "🇬🇧 UK"
+replace = "🇬🇧 GB"
 
 [[rename_node]]
 match = "^(阿拉伯联合酋长国|United Arab Emirates)"
@@ -75,23 +71,11 @@ match = "^(新西兰|New Zealand)"
 replace = "🇳🇿 NZ"
 
 [[rename_node]]
-match = "^USA Los Angeles"
-replace = "🇺🇸 US LAX"
-
-[[rename_node]]
-match = "^USA San Jose"
-replace = "🇺🇸 US SJC"
-
-[[rename_node]]
-match = "^USA Seattle"
-replace = "🇺🇸 US SEA"
-
-[[rename_node]]
 match = "^(美国|United States)"
 replace = "🇺🇸 US"
 
 [[rename_node]]
-match = "^(韩国|Korea \\(Republic of\\)|Korea)"
+match = "^(韩国|Korea \\(Republic of\\))"
 replace = "🇰🇷 KR"
 
 [[rename_node]]
@@ -215,7 +199,7 @@ match = "^(阿曼|Oman)"
 replace = "🇴🇲 OM"
 
 [[rename_node]]
-match = "^(土耳其|Türkiye|Turkey)"
+match = "^(土耳其|Türkiye)"
 replace = "🇹🇷 TR"
 
 [[rename_node]]
@@ -265,14 +249,6 @@ replace = "🇨🇷 CR"
 [[rename_node]]
 match = "^(塞尔维亚|Serbia)"
 replace = "🇷🇸 RS"
-
-[[rename_node]]
-match = "^Russia Moscow"
-replace = "🇷🇺 RU MOW"
-
-[[rename_node]]
-match = "^Russia St\\. Petersburg"
-replace = "🇷🇺 RU LED 01"
 
 [[rename_node]]
 match = "^(俄罗斯联邦|Russian Federation)"
@@ -795,7 +771,7 @@ match = "^(南苏丹|South Sudan)"
 replace = "🇸🇸 SS"
 
 [[rename_node]]
-match = "^(朝鲜|Korea \\(Democratic People’s Rep\\. of\\)|Korea \\(Democratic People's Rep\\. of\\))"
+match = "^(朝鲜|Korea \\(Democratic People’s Rep\\. of\\))"
 replace = "🇰🇵 KP"
 
 [[rename_node]]

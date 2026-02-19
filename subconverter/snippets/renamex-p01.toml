@@ -1,0 +1,127 @@
+[[rename_node]]
+match = "^(瑞士|Switzerland )"
+replace = "🇨🇭 CH P01 E"
+
+[[rename_node]]
+match = "^(德国|Germany )"
+replace = "🇩🇪 DE P01 E"
+
+[[rename_node]]
+match = "^(瑞典|Sweden )"
+replace = "🇸🇪 SE P01 E"
+
+[[rename_node]]
+match = "^Australia Sydney "
+replace = "🇦🇺 AU SYD P01 E"
+
+[[rename_node]]
+match = "^(澳大利亚|Australia )"
+replace = "🇦🇺 AU P01 E"
+
+[[rename_node]]
+match = "^(中国香港特别行政区|Hong Kong, China \\(SAR\\)|Hong Kong )"
+replace = "🇭🇰 HK P01 E"
+
+[[rename_node]]
+match = "^(荷兰|Netherlands )"
+replace = "🇳🇱 NL P01 E"
+
+[[rename_node]]
+match = "^(爱尔兰|Ireland )"
+replace = "🇮🇪 IE P01 E"
+
+[[rename_node]]
+match = "^(新加坡|Singapore )"
+replace = "🇸🇬 SG P01 E"
+
+[[rename_node]]
+match = "^(英国|United Kingdom )"
+replace = "🇬🇧 GB P01 E"
+
+[[rename_node]]
+match = "^(阿拉伯联合酋长国|United Arab Emirates )"
+replace = "🇦🇪 AE P01 E"
+
+[[rename_node]]
+match = "^(加拿大|Canada )"
+replace = "🇨🇦 CA P01 E"
+
+[[rename_node]]
+match = "^USA Los Angeles "
+replace = "🇺🇸 US LAX P01 E"
+
+[[rename_node]]
+match = "^USA San Jose "
+replace = "🇺🇸 US SJC P01 E"
+
+[[rename_node]]
+match = "^USA Seattle "
+replace = "🇺🇸 US SEA P01 E"
+
+[[rename_node]]
+match = "^(美国|United States )"
+replace = "🇺🇸 US P01 E"
+
+[[rename_node]]
+match = "^(韩国|Korea \\(Republic of\\)|Korea )"
+replace = "🇰🇷 KR P01 E"
+
+[[rename_node]]
+match = "^(奥地利|Austria )"
+replace = "🇦🇹 AT P01 E"
+
+[[rename_node]]
+match = "^(日本|Japan )"
+replace = "🇯🇵 JP P01 E"
+
+[[rename_node]]
+match = "^(法国|France )"
+replace = "🇫🇷 FR P01 E"
+
+[[rename_node]]
+match = "^(智利|Chile )"
+replace = "🇨🇱 CL P01 E"
+
+[[rename_node]]
+match = "^(匈牙利|Hungary )"
+replace = "🇭🇺 HU P01 E"
+
+[[rename_node]]
+match = "^(阿根廷|Argentina )"
+replace = "🇦🇷 AR P01 E"
+
+[[rename_node]]
+match = "^(土耳其|Türkiye|Turkey )"
+replace = "🇹🇷 TR P01 E"
+
+[[rename_node]]
+match = "^(保加利亚|Bulgaria )"
+replace = "🇧🇬 BG P01 E"
+
+[[rename_node]]
+match = "^Russia Moscow "
+replace = "🇷🇺 RU MOW P01 E"
+
+[[rename_node]]
+match = "^Russia St\\. Petersburg"
+replace = "🇷🇺 RU LED P01 E01"
+
+[[rename_node]]
+match = "^(俄罗斯联邦|Russian Federation )"
+replace = "🇷🇺 RU P01 E"
+
+[[rename_node]]
+match = "^(巴西|Brazil )"
+replace = "🇧🇷 BR P01 E"
+
+[[rename_node]]
+match = "^(印度尼西亚|Indonesia )"
+replace = "🇮🇩 ID P01 E"
+
+[[rename_node]]
+match = "^(印度|India )"
+replace = "🇮🇳 IN P01 E"
+
+[[rename_node]]
+match = "^(台湾|Taiwan )"
+replace = "🇹🇼 TW P01 E"
