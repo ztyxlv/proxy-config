@@ -18,8 +18,9 @@ jobs:
           sudo chmod +x /usr/local/bin/yq
 
       - run: |
-          curl -fsSL https://github.com/MetaCubeX/mihomo/releases/download/v1.19.21/mihomo-linux-amd64-v3-v1.19.21.gz | gunzip > mihomo
-          sudo mv mihomo /usr/local/bin/mihomo
+          curl -fsSL https://github.com/MetaCubeX/mihomo/releases/download/v1.19.21/mihomo-linux-amd64-v3-v1.19.21.gz \
+          | gunzip > mihomo-bin
+          sudo mv mihomo-bin /usr/local/bin/mihomo
           sudo chmod +x /usr/local/bin/mihomo
 
       - run: |
