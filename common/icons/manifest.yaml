@@ -1,0 +1,80 @@
+icons:
+  - name: youtube
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/youtube-icon-8.svg
+
+  - name: bilibili
+    category: services
+    source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/bilibili.svg
+
+  - name: tiktok
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/tiktok-1.svg
+
+  - name: spotify
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/spotify-2.svg
+
+  - name: telegram
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/telegram-2019-logo.svg
+
+  - name: speedtest
+    category: services
+    source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ookla-speedtest.svg
+
+  - name: netflix
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/netflix-logo-icon.svg
+
+  - name: steam
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/steam-icon-logo.svg
+
+  - name: openai
+    category: services
+    source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/openai-light.svg
+
+  - name: binance
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/binance-logo.svg
+
+  - name: paypal
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/paypal-4.svg
+
+  - name: amazon
+    category: services
+    source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/amazon-light.svg
+
+  - name: google
+    category: services
+    source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/google.svg
+
+  - name: microsoft
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/microsoft-5.svg
+
+  - name: apple
+    category: services
+    source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/apple-light.svg
+
+  - name: hk
+    category: flags
+    source: https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/hk.svg
+
+  - name: tw
+    category: flags
+    source: https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/tw.svg
+
+  - name: jp
+    category: flags
+    source: https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/jp.svg
+
+  - name: sg
+    category: flags
+    source: https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/sg.svg
+
+  - name: us
+    category: flags
+    source: https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/us.svg

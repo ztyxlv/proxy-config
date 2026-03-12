@@ -2,9 +2,14 @@ permissions:
   contents: write
 
 on:
+  workflow_dispatch:
+
   schedule:
     - cron: "0 20 * * *"
-  workflow_dispatch:
+
+  push:
+    paths:
+      - mihomo/rules/manifest.yaml
 
 jobs:
   build:
@@ -32,7 +37,7 @@ jobs:
             | xargs -I{} mkdir -p "mihomo/rules/source/{}"
 
       - run: |
-          yq -r '.rules[] | select(.remote) | .name + " " + (.remote[])' mihomo/rules/manifest.yaml \
+          yq -r '.rules[] | select(.remote) | [.name, (.remote[])] | @tsv' mihomo/rules/manifest.yaml \
             | xargs -n 2 -P 10 sh -c 'curl -fsSL "$2" -o "mihomo/rules/source/$1/${2##*/}"' sh
 
       - run: |
