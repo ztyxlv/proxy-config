@@ -33,7 +33,7 @@ jobs:
 
       - run: |
           yq -r '.icons[] | select(.source) | [.name, .category] | @tsv' common/icons/manifest.yaml \
-            | xargs -n 2 sh -c 'rsvg-convert -w 32 "common/icons/$2/svg/$1.svg" -o "common/icons/$2/png/$1.png"' sh
+            | xargs -n 2 sh -c 'rsvg-convert -w 64 "common/icons/$2/svg/$1.svg" -o "common/icons/$2/png/$1.png"' sh
 
       - run: |
           git config user.name github-actions
