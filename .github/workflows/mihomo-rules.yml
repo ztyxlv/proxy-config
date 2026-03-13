@@ -24,8 +24,7 @@ jobs:
           sudo chmod +x /usr/local/bin/yq
 
       - run: |
-          MIHOMO_URL=$(curl -fsSL https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
-            | yq -r '.assets[] | select(.name | test("mihomo-linux-amd64-v3-.*\\.gz$")) | .browser_download_url')
+          MIHOMO_URL=$(curl -fsSL https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | yq -r '.assets[] | select(.name | test("mihomo-linux-amd64-v3-.*\\.gz$")) | .browser_download_url')
 
           curl -fsSL "$MIHOMO_URL" \
             | gunzip > mihomo-bin
