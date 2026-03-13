@@ -134,15 +134,25 @@ proxy-group-region: &proxy-group-region
   include-all-proxies: true
 
 proxy-groups:
-  - name: Video
+  - name: YouTube
     <<: *proxy-group-custom
     proxies: *proxies-custom-hk
-    icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/services/svg/netflix.svg
+    icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/services/svg/youtube.svg
+
+  - name: Telegram
+    <<: *proxy-group-custom
+    proxies: *proxies-custom-hk
+    icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/services/svg/telegram.svg
 
   - name: Game
     <<: *proxy-group-custom
     proxies: *proxies-custom-hk
     icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/services/svg/steam.svg
+
+  - name: Video
+    <<: *proxy-group-custom
+    proxies: *proxies-custom-hk
+    icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/services/svg/netflix.svg
 
   - name: AI
     <<: *proxy-group-custom
@@ -292,6 +302,16 @@ rule-providers:
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/merged/nike-classical.yaml
     path: ./rulesets/nike-classical.yaml
 
+  game-cn-domain:
+    <<: *rule-provider-domain
+    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/game-cn-domain.mrs
+    path: ./rulesets/game-cn-domain.mrs
+
+  game-domain:
+    <<: *rule-provider-domain
+    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/game-domain.mrs
+    path: ./rulesets/game-domain.mrs
+
   video-netflix-domain:
     <<: *rule-provider-domain
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/video-netflix-domain.mrs
@@ -306,16 +326,6 @@ rule-providers:
     <<: *rule-provider-domain
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/video-domain.mrs
     path: ./rulesets/video-domain.mrs
-
-  game-cn-domain:
-    <<: *rule-provider-domain
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/game-cn-domain.mrs
-    path: ./rulesets/game-cn-domain.mrs
-
-  game-domain:
-    <<: *rule-provider-domain
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/game-domain.mrs
-    path: ./rulesets/game-domain.mrs
 
   ai-apple-domain:
     <<: *rule-provider-domain
@@ -414,19 +424,19 @@ rules:
   - RULE-SET,direct-classical,DIRECT
   - RULE-SET,reject-domain,REJECT
   - RULE-SET,reject-classical,REJECT
-  - RULE-SET,youtube-domain,HK
+  - RULE-SET,youtube-domain,YouTube
   - RULE-SET,bilibili-domain,DIRECT
   - RULE-SET,tiktok-domain,US
   - RULE-SET,spotify-domain,US
-  - RULE-SET,telegram-classical,HK
+  - RULE-SET,telegram-classical,Telegram
   - RULE-SET,github-classical,HK
   - RULE-SET,speedtest-domain,DIRECT
   - RULE-SET,nike-classical,US
+  - RULE-SET,game-cn-domain,DIRECT
+  - RULE-SET,game-domain,Game
   - RULE-SET,video-netflix-domain,Video
   - RULE-SET,video-netflix-ipcidr,Video,no-resolve
   - RULE-SET,video-domain,Video
-  - RULE-SET,game-cn-domain,DIRECT
-  - RULE-SET,game-domain,Game
   - RULE-SET,ai-apple-domain,US
   - RULE-SET,ai-domain,AI
   - RULE-SET,crypto-domain,Crypto

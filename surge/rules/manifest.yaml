@@ -39,13 +39,6 @@ rules:
     remote:
       - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Nike/Nike.list
 
-  - name: video
-    remote:
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/netflix.list
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/disney.list
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/apple-tv.list
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/primevideo.list
-
   - name: game-cn
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/games-cn.list
@@ -53,6 +46,13 @@ rules:
   - name: game
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/games.list
+
+  - name: video
+    remote:
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/netflix.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/disney.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/apple-tv.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/primevideo.list
 
   - name: ai-apple
     include:

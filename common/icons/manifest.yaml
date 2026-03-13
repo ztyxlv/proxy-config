@@ -61,7 +61,7 @@ icons:
 
   - name: proxy
     category: policies
-    source: https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/fish.svg
+    source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/tor.png
 
   - name: hk
     category: flags
