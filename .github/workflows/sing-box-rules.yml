@@ -20,13 +20,13 @@ jobs:
       - uses: actions/checkout@v6
 
       - run: |
-          sudo curl -fsSL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 \
-            -o /usr/local/bin/yq
+          sudo curl -fsSL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
 
       - run: |
           SINGBOX_URL=$(curl -fsSL https://api.github.com/repos/SagerNet/sing-box/releases/latest \
-            | yq -r '.assets[] | select(.name | test("^sing-box-[^-]+-linux-amd64\\.tar\\.gz$")) | .browser_download_url')
+            | yq -r '.assets[] | select(.name | test("sing-box-[0-9.]+-linux-amd64\\.tar\\.gz$")) | .browser_download_url')
+
           curl -fsSL "$SINGBOX_URL" | tar -xz
           sudo mv sing-box-*-linux-amd64/sing-box /usr/local/bin/sing-box
           sudo chmod +x /usr/local/bin/sing-box
@@ -62,58 +62,15 @@ jobs:
               --argjson remote "$remote" \
               --argjson exclude "$exclude" \
               --argjson include "$include" \
-              -f <(cat <<'JQ'
-def apply_exclude(exc):
-  reduce exc[] as $e (.;
-    reduce ($e | to_entries[]) as $item (.;
-      if has($item.key) then
-        if ($item.value | type) == "array" then
-          .[$item.key] -= $item.value
-          | if (.[$item.key] | length) == 0 then del(.[$item.key]) else . end
-        else
-          if .[$item.key] == $item.value then del(.[$item.key]) else . end
-        end
-      else .
-      end
-    )
-  );
-
-($remote | map(apply_exclude($exclude))) as $filtered
-| ($filtered + $include) as $all
-| {
-    version: 4,
-    rules:
-      if ($all | length) == 0 then []
-      else
-        [
-          (
-            reduce $all[] as $r ({};
-              reduce ($r | to_entries[]) as $e (.;
-                if ($e.value | type) == "array" then
-                  .[$e.key] = ((.[$e.key] // []) + $e.value)
-                else
-                  .[$e.key] = $e.value
-                end
-              )
-            )
-            | with_entries(
-                if (.value | type) == "array"
-                then .value |= (unique | sort)
-                else .
-                end
-              )
-          )
-        ]
-      end
-  }
-JQ
-            ) > "$outfile"
+              'def apply_exclude(exc): reduce exc[] as $e (. ; reduce ($e|to_entries[]) as $i (. ; if has($i.key) then if ($i.value|type)=="array" then .[$i.key]-=$i.value | if (.[$i.key]|length)==0 then del(.[$i.key]) else . end else if .[$i.key]==$i.value then del(.[$i.key]) else . end end else . end)); ($remote|map(apply_exclude($exclude))) as $filtered | ($filtered+$include) as $all | {version:4,rules: if ($all|length)==0 then [] else [ (reduce $all[] as $r ({}; reduce ($r|to_entries[]) as $e (. ; if ($e.value|type)=="array" then .[$e.key]=((.[$e.key]//[])+$e.value) else .[$e.key]=$e.value end)) | with_entries(if (.value|type)=="array" then .value|=(unique|sort) else . end)) ] end }' \
+              > "$outfile"
           done
 
       - run: |
           for f in sing-box/rules/merged/*.json; do
             name="${f##*/}"
             name="${name%.json}"
+
             sing-box rule-set compile "$f" -o "sing-box/rules/compiled/${name}.srs"
           done
 
