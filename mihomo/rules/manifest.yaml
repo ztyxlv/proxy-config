@@ -64,7 +64,7 @@ rules:
     remote:
       - https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/games.list
 
-  - name: video-us
+  - name: video-us-domain
     type: domain
     remote:
       - https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/appletv.list
