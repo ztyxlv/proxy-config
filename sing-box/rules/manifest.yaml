@@ -44,7 +44,6 @@ rules:
     remote:
       - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/appletv.json
       - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/primevideo.json
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/singbox/version4/hulu.json
 
   - name: video
     remote:
@@ -62,7 +61,7 @@ rules:
           - apple-relay.apple.com
           - apple-relay.cloudflare.com
           - cp4.cloudflare.com
-        domain_suffix:
+      - domain_suffix:
           - smoot.apple.com
 
   - name: ai
@@ -107,7 +106,7 @@ rules:
           - opensource.guide
           - repo.new
           - myoctocat.com
-        domain_keyword:
+      - domain_keyword:
           - github
 
   - name: microsoft-cn

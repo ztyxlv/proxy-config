@@ -5,7 +5,7 @@ icons:
 
   - name: bilibili
     category: services
-    source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/bilibili.svg
+    source: https://cdn.worldvectorlogo.com/logos/bilibili.svg
 
   - name: tiktok
     category: services
@@ -23,13 +23,13 @@ icons:
     category: services
     source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ookla-speedtest.svg
 
-  - name: netflix
-    category: services
-    source: https://cdn.worldvectorlogo.com/logos/netflix-logo-icon.svg
-
   - name: steam
     category: services
     source: https://cdn.worldvectorlogo.com/logos/steam-icon-logo.svg
+
+  - name: netflix
+    category: services
+    source: https://cdn.worldvectorlogo.com/logos/netflix-logo-icon.svg
 
   - name: openai
     category: services
@@ -61,7 +61,15 @@ icons:
 
   - name: proxy
     category: policies
-    source: https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/tor-browser-icon.svg
+    source: https://uxwing.com/wp-content/themes/uxwing/download/location-travel-map/earth-icon.svg
+
+  - name: direct
+    category: policies
+    source: https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/connected-plug-icon.svg
+
+  - name: reject
+    category: policies
+    source: https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/disconnect-plug-icon.svg
 
   - name: hk
     category: flags

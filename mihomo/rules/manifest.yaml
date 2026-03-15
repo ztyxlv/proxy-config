@@ -67,7 +67,6 @@ rules:
     remote:
       - https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/appletv.list
       - https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/primevideo.list
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/domain/hulu.list
 
   - name: video-domain
     type: domain
@@ -93,22 +92,22 @@ rules:
   - name: crypto-domain
     type: domain
     remote:
-      - https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/domain/crypto.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/domain/crypto.list
 
   - name: finance-domain
     type: domain
     remote:
-      - https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/domain/paypal.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/domain/paypal.list
 
   - name: ecommerce-domain
     type: domain
     remote:
-      - https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/domain/ecommerce.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/domain/ecommerce.list
 
   - name: ecommerce-ipcidr
     type: ipcidr
     remote:
-      - https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/ipcidr/ecommerce.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/ipcidr/ecommerce.list
 
   - name: google-voice-domain
     type: domain
@@ -145,12 +144,12 @@ rules:
   - name: microsoft-domain
     type: domain
     remote:
-      - https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/domain/microsoft.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/domain/microsoft.list
 
   - name: apple-proxy-domain
     type: domain
     remote:
-      - https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/domain/apple-proxy.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/domain/apple-proxy.list
 
   - name: apple-cn-domain
     type: domain

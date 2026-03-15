@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "0 20 * * *"
+    - cron: "0 0 * * *"
 
   push:
     paths:
@@ -48,13 +48,13 @@ jobs:
             exclude=$(yq -r ".rules[] | select(.name == \"${name}\") | .exclude[]?" surge/rules/manifest.yaml)
             include=$(yq -r ".rules[] | select(.name == \"${name}\") | .include[]?" surge/rules/manifest.yaml)
 
-            if compgen -G "$d/*.list" > /dev/null; then
+            if compgen -G "$d/*.list" > /dev/null || compgen -G "$d/*.conf" > /dev/null; then
               if [ -n "$exclude" ]; then
-                grep -hv '^#' "$d"/*.list \
+                grep -hv '^#' "$d"/*.list "$d"/*.conf 2>/dev/null \
                   | grep -vxFf <(printf '%s\n' "$exclude") \
                   >> "$tmp"
               else
-                grep -hv '^#' "$d"/*.list \
+                grep -hv '^#' "$d"/*.list "$d"/*.conf 2>/dev/null \
                   >> "$tmp"
               fi
             fi
@@ -72,8 +72,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add surge/rules
-          git diff --cached --quiet || (
+
+          if ! git diff --cached --quiet; then
             git commit -m "Updated on $(TZ=Asia/Shanghai date '+%F at %T')"
             git pull --rebase
             git push
-          )
+          fi

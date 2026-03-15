@@ -1,7 +1,8 @@
 rules:
   - name: local-direct
     remote:
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/private.list
+      - https://ruleset.skk.moe/List/non_ip/lan.conf
+      - https://ruleset.skk.moe/List/ip/lan.conf
 
   - name: youtube
     remote:
@@ -21,11 +22,11 @@ rules:
 
   - name: telegram
     remote:
-      - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list
+      - https://ruleset.skk.moe/List/ip/telegram.conf
 
   - name: speedtest
     remote:
-      - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Speedtest/Speedtest.list
+      - https://ruleset.skk.moe/List/domainset/speedtest.conf
 
   - name: game-cn
     remote:
@@ -35,27 +36,23 @@ rules:
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/games.list
 
+  - name: video-us
+    remote:
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/apple-tv.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/primevideo.list
+
   - name: video
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/netflix.list
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/disney.list
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/apple-tv.list
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/primevideo.list
 
   - name: ai-apple
-    include:
-      - DOMAIN-SUFFIX,smoot.apple.com
-      - DOMAIN,guzzoni.apple.com
-      - DOMAIN,gspe1-ssl.ls.apple.com
-      - DOMAIN,apple-relay.mask.apple-dns.net
-      - DOMAIN,apple-relay.fastly-edge.com
-      - DOMAIN,apple-relay.apple.com
-      - DOMAIN,apple-relay.cloudflare.com
-      - DOMAIN,cp4.cloudflare.com
+    remote:
+      - https://ruleset.skk.moe/List/non_ip/apple_intelligence.conf
 
   - name: ai
     remote:
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/ai.list
+      - https://ruleset.skk.moe/List/non_ip/ai.conf
 
   - name: crypto
     remote:
