@@ -5,6 +5,10 @@ DOMAIN,deribit.cdn.prismic.io
 DOMAIN,onekey.zendesk.com
 DOMAIN,straitsx-826709081262441084-b790f87a2ae6fd417434295.freshchat.com
 DOMAIN,token-api.metaswap.codefi.network
+DOMAIN-KEYWORD,binance
+DOMAIN-KEYWORD,huobi
+DOMAIN-KEYWORD,metamask
+DOMAIN-KEYWORD,okx
 DOMAIN-SUFFIX,1inch.io
 DOMAIN-SUFFIX,1ml.com
 DOMAIN-SUFFIX,365huo.xyz
@@ -358,10 +362,6 @@ DOMAIN-SUFFIX,zb.io
 DOMAIN-SUFFIX,zb.live
 DOMAIN-SUFFIX,zkscan.io
 DOMAIN-SUFFIX,zksync.io
-DOMAIN-KEYWORD,binance
-DOMAIN-KEYWORD,huobi
-DOMAIN-KEYWORD,metamask
-DOMAIN-KEYWORD,okx
 PROCESS-NAME,Binance.exe
 PROCESS-NAME,Huobi.exe
 PROCESS-NAME,OKX.exe

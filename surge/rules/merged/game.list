@@ -73,6 +73,10 @@ DOMAIN,ubistatic9-a.akamaihd.net
 DOMAIN,uplaypc-s-ubisoft.cdn.ubionline.com.cn
 DOMAIN,wb-agora-hydra-file-storage-k1.s3.amazonaws.com
 DOMAIN,xz.pphimalayanrt.com
+DOMAIN-KEYWORD,epicgames
+DOMAIN-KEYWORD,steambroadcast
+DOMAIN-KEYWORD,steamstore
+DOMAIN-KEYWORD,steamuserimages
 DOMAIN-SUFFIX,100classicbooks.com
 DOMAIN-SUFFIX,2k.com
 DOMAIN-SUFFIX,2kcoretech.online
@@ -874,10 +878,6 @@ DOMAIN-SUFFIX,zyngaplayersupport.com
 DOMAIN-SUFFIX,zyngapoker.com
 DOMAIN-SUFFIX,神奇宝贝.cn
 DOMAIN-SUFFIX,神奇宝贝.net
-DOMAIN-KEYWORD,epicgames
-DOMAIN-KEYWORD,steambroadcast
-DOMAIN-KEYWORD,steamstore
-DOMAIN-KEYWORD,steamuserimages
 IP-CIDR,103.4.114.233/32,no-resolve
 IP-CIDR,103.4.115.248/32,no-resolve
 IP-CIDR,13.210.25.233/32,no-resolve
