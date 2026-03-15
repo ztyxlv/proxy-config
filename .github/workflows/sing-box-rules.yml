@@ -61,10 +61,11 @@ jobs:
               remote='[]'
             fi
 
-            jq -n \
-              --argjson remote "$remote" \
-              --argjson exclude "$exclude" \
-              --argjson include "$include" \
+          jq -n \
+              --rawfile remote /tmp/remote.json \
+              --rawfile exclude /tmp/exclude.json \
+              --rawfile include /tmp/include.json \
+              '($remote|fromjson) as $remote | ($exclude|fromjson) as $exclude | ($include|fromjson) as $include' \
               -f merge.jq > "$outfile"
           done
 
