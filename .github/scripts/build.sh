@@ -94,9 +94,12 @@ extract_rules() {
   local rule="$1"
   local file="$2"
 
-  if compgen -G "$rule/*.list" > /dev/null || compgen -G "$rule/*.conf" > /dev/null; then
-    grep -hvE '^[[:space:]]*(#|$)' "$rule"/*.list "$rule"/*.conf 2>/dev/null \
-      >> "$file"
+  if compgen -G "$rule/*.list" > /dev/null; then
+    grep -hvE '^[[:space:]]*(#|$)' "$rule"/*.list >> "$file"
+  fi
+
+  if compgen -G "$rule/*.conf" > /dev/null; then
+    grep -hvE '^[[:space:]]*(#|$)' "$rule"/*.conf >> "$file"
   fi
 
   if compgen -G "$rule/*.yaml" > /dev/null; then
