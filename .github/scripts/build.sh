@@ -42,20 +42,21 @@ install_mihomo() {
 # }
 
 install_singbox() {
-  local url tmpdir
+  local url
 
   url=$(curl -fsSL https://api.github.com/repos/SagerNet/sing-box/releases/latest \
-    | jq -r '.assets[] | select(.name | test("^sing-box-[0-9.]+-linux-amd64\\.tar\\.gz$")) | .browser_download_url')
+    | yq -r '.assets[] | select(.name | test("sing-box-[0-9.]+-linux-amd64\\.tar\\.gz$")) | .browser_download_url')
 
-  tmpdir=$(mktemp -d)
+  echo "url: $url"
+  echo "pwd: $(pwd)"
+
+  rm -rf /tmp/sing-box
 
   curl -fsSL "$url" \
-    | tar -xz -C "$tmpdir"
+    | tar -xz --strip-components=1 --wildcards '*/sing-box' -C /tmp
 
-  sudo mv "$tmpdir"/sing-box*/sing-box /usr/local/bin/sing-box
+  sudo mv /tmp/sing-box /usr/local/bin/sing-box
   sudo chmod +x /usr/local/bin/sing-box
-
-  rm -rf "$tmpdir"
 }
 
 install_deps() {
