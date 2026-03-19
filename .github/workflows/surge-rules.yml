@@ -3,10 +3,8 @@ permissions:
 
 on:
   workflow_dispatch:
-
   schedule:
     - cron: "0 0 * * *"
-
   push:
     paths:
       - surge/rules/manifest.yaml
@@ -15,68 +13,31 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v6
-
       - run: |
-          sudo curl -fsSL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/local/bin/yq
-          sudo chmod +x /usr/local/bin/yq
+          source .github/scripts/build.sh
 
-      - run: |
-          rm -rf surge/rules/{source,merged}
-          mkdir -p surge/rules/{source,merged}
+          client="surge"
 
-      - run: |
-          yq -r '.rules[].name' surge/rules/manifest.yaml \
-            | xargs -n1 -P10 sh -c 'mkdir -p "surge/rules/source/$1"' sh
+          manifest="$client/rules/manifest.yaml"
 
-      - run: |
-          yq -r '.rules[] | select(.remote) | .name + " " + (.remote[])' surge/rules/manifest.yaml \
-            | xargs -n2 -P10 sh -c 'curl -fsSL "$2" -o "surge/rules/source/$1/${2##*/}"' sh
+          source_dir="$client/rules/source"
+          merged_dir="$client/rules/merged"
 
-      - run: |
-          for d in surge/rules/source/*; do
-            name="${d##*/}"
-            outfile="surge/rules/merged/${name}.list"
+          install_deps "$client"
 
-            tmp="${outfile}.tmp"
+          init_rule_dirs "$client"
 
-            rm -f "$tmp"
-            : > "$tmp"
+          download_rules "$manifest" "$source_dir"
 
-            exclude=$(yq -r ".rules[] | select(.name == \"${name}\") | .exclude[]?" surge/rules/manifest.yaml)
-            include=$(yq -r ".rules[] | select(.name == \"${name}\") | .include[]?" surge/rules/manifest.yaml)
+          while IFS=$'\t' read -r name; do
+            merged_file="$merged_dir/$name.list"
 
-            files=$(ls "$d"/*.list "$d"/*.conf 2>/dev/null || true)
+            extract_rules "$source_dir/$name" "$merged_file"
+            exclude_rules "$manifest" "$name" "$merged_file"
+            include_rules "$manifest" "$name" "$merged_file"
+            sort_rules "$merged_file"
+          done < <(yq -r '.rules[].name' "$manifest")
 
-            if [ -n "$files" ]; then
-              if [ -n "$exclude" ]; then
-                grep -hvE '^\s*(#|$)' $files \
-                  | grep -vxFf <(printf '%s\n' "$exclude") \
-                  >> "$tmp"
-              else
-                grep -hvE '^\s*(#|$)' $files \
-                  >> "$tmp"
-              fi
-            fi
-
-            if [ -n "$include" ]; then
-              printf '%s\n' "$include" >> "$tmp"
-            fi
-
-            LC_ALL=C sort -u "$tmp" > "$outfile"
-
-            rm -f "$tmp"
-          done
-
-      - run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add surge/rules
-
-          if ! git diff --cached --quiet; then
-            git commit -m "Updated on $(TZ=Asia/Shanghai date '+%F at %T')"
-            git pull --rebase
-            git push
-          fi
+          sync_rules "$client/rules"
