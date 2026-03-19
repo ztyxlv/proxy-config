@@ -3,40 +3,32 @@ permissions:
 
 on:
   workflow_dispatch:
-
   push:
     paths:
-      - common/icons/manifest.yaml
       - .github/workflows/common-icons.yml
+      - common/icons/manifest.yaml
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v6
-
-      - run: |
-          sudo curl -fsSL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/local/bin/yq
-          sudo chmod +x /usr/local/bin/yq
-
       - run: |
           sudo apt-get update -y
           sudo apt-get install -y librsvg2-bin
 
-      - run: |
+          sudo curl -fsSL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/local/bin/yq
+          sudo chmod +x /usr/local/bin/yq
+
           rm -rf common/icons/{services,policies,flags}
           mkdir -p common/icons/{services,policies,flags}/{svg,png}
 
-      - run: |
           yq -r '.icons[] | select(.source) | [.name, .category, .source] | @tsv' common/icons/manifest.yaml \
             | xargs -n3 -P10 sh -c 'curl -fsSL "$3" -o "common/icons/$2/svg/$1.svg"' sh
 
-      - run: |
           yq -r '.icons[] | select(.source) | [.name, .category] | @tsv' common/icons/manifest.yaml \
             | xargs -n2 -P10 sh -c 'rsvg-convert -w 64 "common/icons/$2/svg/$1.svg" -o "common/icons/$2/png/$1.png"' sh
 
-      - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add common/icons

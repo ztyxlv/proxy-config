@@ -52,7 +52,7 @@ rules:
 
   - name: ai
     remote:
-      - https://ruleset.skk.moe/List/non_ip/ai.conf
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/ai.list
 
   - name: crypto
     remote:

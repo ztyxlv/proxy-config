@@ -39,7 +39,6 @@ jobs:
             extract_rules "$source_dir/$name" "$merged_temp"
             exclude_rules "$manifest" "$name" "$merged_temp"
             include_rules "$manifest" "$name" "$merged_temp"
-
             sort_rules "$merged_temp"
 
             echo "payload:" > "$merged_file"

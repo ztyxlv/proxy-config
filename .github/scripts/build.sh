@@ -32,7 +32,7 @@ install_singbox() {
   local url
 
   url=$(curl -fsSL https://api.github.com/repos/SagerNet/sing-box/releases/latest \
-    | jq -r '.assets[] | select(.name | test("^sing-box-[^-]+-linux-amd64\\.tar\\.gz$")) | .browser_download_url')
+    | yq -r '.assets[] | select(.name | test("sing-box-[0-9.]+-linux-amd64\\.tar\\.gz$")) | .browser_download_url')
 
   curl -fsSL "$url" \
     | tar -xz --strip-components=1 --wildcards '*/sing-box' -C /tmp
