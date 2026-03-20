@@ -8,8 +8,8 @@
   "dns": {
     "servers": [
       { "type": "local", "tag": "Local" },
-      { "type": "https", "tag": "China", "server": "dns.alidns.com", "detour": "DIRECT" },
-      { "type": "https", "tag": "Global", "server": "cloudflare-dns.com", "detour": "PRX" }
+      { "type": "https", "tag": "China", "server": "dns.alidns.com", "detour": "DIR", "domain_resolver": "Local" },
+      { "type": "https", "tag": "Global", "server": "cloudflare-dns.com", "detour": "PRX", "domain_resolver": "Local" }
     ],
     "rules": [
       { "rule_set": "Direct", "action": "route", "server": "Local" },
@@ -31,6 +31,7 @@
   },
   "route": {
     "rules": [
+      { "port": 53, "action": "hijack-dns" },
       { "rule_set": "Direct", "action": "route", "outbound": "DIRECT" },
       { "rule_set": "BH", "action": "route", "outbound": "TW" },
       { "rule_set": "BB", "action": "route", "outbound": "DIRECT" },
