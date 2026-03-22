@@ -3,10 +3,6 @@ icons:
     category: services
     source: https://cdn.worldvectorlogo.com/logos/youtube-icon-8.svg
 
-  - name: bb
-    category: services
-    source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/bilibili.svg
-
   - name: tt
     category: services
     source: https://cdn.worldvectorlogo.com/logos/tiktok-1.svg
@@ -59,15 +55,15 @@ icons:
     category: services
     source: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/apple-light.svg
 
-  - name: prx
+  - name: proxy
     category: policies
     source: https://uxwing.com/wp-content/themes/uxwing/download/location-travel-map/earth-icon.svg
 
-  - name: dir
+  - name: direct
     category: policies
     source: https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/connected-plug-icon.svg
 
-  - name: rej
+  - name: reject
     category: policies
     source: https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/disconnect-plug-icon.svg
 

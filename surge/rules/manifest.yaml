@@ -1,16 +1,11 @@
 rules:
   - name: direct
     remote:
-      - https://ruleset.skk.moe/List/non_ip/lan.conf
-      - https://ruleset.skk.moe/List/ip/lan.conf
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/private.list
 
-  - name: bh
+  - name: yt
     remote:
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/bahamut.list
-
-  - name: bb
-    remote:
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/bilibili.list
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/youtube.list
 
   - name: tt
     remote:
@@ -22,11 +17,19 @@ rules:
 
   - name: tg
     remote:
-      - https://ruleset.skk.moe/List/ip/telegram.conf
+      - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list
+
+  - name: nk
+    remote:
+      - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Nike/Nike.list
+
+  - name: gh
+    remote:
+      - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list
 
   - name: st
     remote:
-      - https://ruleset.skk.moe/List/domainset/speedtest.conf
+      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/speedtest.list
 
   - name: gam-cn
     remote:
@@ -45,6 +48,10 @@ rules:
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/netflix.list
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/disney.list
+
+  - name: ais-jp
+    remote:
+      - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list
 
   - name: ais-us
     remote:
@@ -66,10 +73,6 @@ rules:
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/ecommerce.list
 
-  - name: ggl-yt
-    remote:
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/youtube.list
-
   - name: ggl-us
     include:
       - DOMAIN,voice.google.com
@@ -78,10 +81,6 @@ rules:
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/googlefcm.list
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/google.list
-
-  - name: msf-hk
-    remote:
-      - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list
 
   - name: msf-cn
     remote:
@@ -104,11 +103,7 @@ rules:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/apns.list
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/apple.list
 
-  - name: proxy-us
-    remote:
-      - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Nike/Nike.list
-
-  - name: fnl-direct
+  - name: final-direct
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/cn.list
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/cncidr.list

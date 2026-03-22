@@ -8,13 +8,9 @@ rules:
       - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/private.json
       - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/privateip.json
 
-  - name: bh
+  - name: yt
     remote:
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/singbox/version4/bahamut.json
-
-  - name: bb
-    remote:
-      - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/bilibili.json
+      - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/youtube.json
 
   - name: tt
     remote:
@@ -27,6 +23,21 @@ rules:
   - name: tg
     remote:
       - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/telegramip.json
+
+  - name: gh
+    include:
+      - domain_suffix:
+          - dependabot.com
+          - ghcr.io
+          - git.io
+          - npmjs.com
+          - npmjs.org
+          - npm.community
+          - opensource.guide
+          - repo.new
+          - myoctocat.com
+      - domain_keyword:
+          - github
 
   - name: st
     remote:
@@ -99,10 +110,6 @@ rules:
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/singbox/version4/ecommerce.json
 
-  - name: ggl-hk
-    remote:
-      - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/youtube.json
-
   - name: ggl-us
     include:
       - domain:
@@ -116,21 +123,6 @@ rules:
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/singbox/version4/googlefcm.json
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/singbox/version4/google.json
-
-  - name: msf-hk
-    include:
-      - domain_suffix:
-          - dependabot.com
-          - ghcr.io
-          - git.io
-          - npmjs.com
-          - npmjs.org
-          - npm.community
-          - opensource.guide
-          - repo.new
-          - myoctocat.com
-      - domain_keyword:
-          - github
 
   - name: msf-cn
     remote:
@@ -153,7 +145,7 @@ rules:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/singbox/version4/apns.json
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/singbox/version4/apple.json
 
-  - name: fnl-direct
+  - name: final-direct
     remote:
       - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/cn-lite.json
       - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/cnip.json

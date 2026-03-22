@@ -71,7 +71,7 @@ dns:
   default-nameserver: [system]
   nameserver-policy:
     "rule-set:direct-domain": [system]
-    "rule-set:fnl-direct-domain": [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
+    "rule-set:final-direct-domain": [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
   proxy-server-nameserver: [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
   direct-nameserver: []
   direct-nameserver-follow-policy: false
@@ -104,19 +104,10 @@ tun:
   iproute2-rule-index: 9000
   endpoint-independent-nat: false
 
-ntp:
-  enable: true
-  write-to-system: false
-  server: ntp.aliyun.com
-  port: 123
-  interval: 60
-
 proxies:
 
 proxies-custom-hk: &proxies-custom-hk []
-proxies-custom-tw: &proxies-custom-tw []
 proxies-custom-jp: &proxies-custom-jp []
-proxies-custom-sg: &proxies-custom-sg []
 proxies-custom-us: &proxies-custom-us []
 
 proxy-group-custom: &proxy-group-custom
@@ -172,30 +163,20 @@ proxy-groups:
     proxies: *proxies-custom-hk
     icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/services/svg/apl.svg
 
-  - name: PRX
+  - name: PROXY
     <<: *proxy-group-custom
     proxies: *proxies-custom-hk
-    icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/policies/svg/prx.svg
+    icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/policies/svg/proxy.svg
 
   - name: HK
     <<: *proxy-group-region
     filter: HK
     icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/flags/svg/hk.svg
 
-  - name: TW
-    <<: *proxy-group-region
-    filter: TW
-    icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/flags/svg/tw.svg
-
   - name: JP
     <<: *proxy-group-region
     filter: JP
     icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/flags/svg/jp.svg
-
-  - name: SG
-    <<: *proxy-group-region
-    filter: SG
-    icon: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/common/icons/flags/svg/sg.svg
 
   - name: US
     <<: *proxy-group-region
@@ -240,15 +221,10 @@ rule-providers:
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/merged/direct-classical.yaml
     path: ./rulesets/direct-classical.yaml
 
-  bh-domain:
+  yt-domain:
     <<: *rule-provider-domain
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/bh-domain.mrs
-    path: ./rulesets/bh-domain.mrs
-
-  bb-domain:
-    <<: *rule-provider-domain
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/bb-domain.mrs
-    path: ./rulesets/bb-domain.mrs
+    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/yt-domain.mrs
+    path: ./rulesets/yt-domain.mrs
 
   tt-domain:
     <<: *rule-provider-domain
@@ -264,6 +240,11 @@ rule-providers:
     <<: *rule-provider-ipcidr
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/tg-ipcidr.mrs
     path: ./rulesets/tg-ipcidr.mrs
+
+  gh-classical:
+    <<: *rule-provider-domain
+    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/merged/gh-classical.yaml
+    path: ./rulesets/gh-classical.yaml
 
   st-domain:
     <<: *rule-provider-domain
@@ -330,11 +311,6 @@ rule-providers:
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/ecm-ipcidr.mrs
     path: ./rulesets/ecm-ipcidr.mrs
 
-  ggl-hk-domain:
-    <<: *rule-provider-domain
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/ggl-hk-domain.mrs
-    path: ./rulesets/ggl-hk-domain.mrs
-
   ggl-us-domain:
     <<: *rule-provider-domain
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/ggl-us-domain.mrs
@@ -354,11 +330,6 @@ rule-providers:
     <<: *rule-provider-ipcidr
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/ggl-ipcidr.mrs
     path: ./rulesets/ggl-ipcidr.mrs
-
-  msf-hk-classical:
-    <<: *rule-provider-classical
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/merged/msf-hk-classical.yaml
-    path: ./rulesets/msf-hk-classical.yaml
 
   msf-cn-domain:
     <<: *rule-provider-domain
@@ -390,26 +361,26 @@ rule-providers:
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/apl-ipcidr.mrs
     path: ./rulesets/apl-ipcidr.mrs
 
-  fnl-direct-domain:
+  final-direct-domain:
     <<: *rule-provider-domain
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/fnl-direct-domain.mrs
-    path: ./rulesets/fnl-direct-domain.mrs
+    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/final-direct-domain.mrs
+    path: ./rulesets/final-direct-domain.mrs
 
-  fnl-direct-ipcidr:
+  final-direct-ipcidr:
     <<: *rule-provider-ipcidr
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/fnl-direct-ipcidr.mrs
-    path: ./rulesets/fnl-direct-ipcidr.mrs
+    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/final-direct-ipcidr.mrs
+    path: ./rulesets/final-direct-ipcidr.mrs
 
 rules:
   - RULE-SET,direct-domain,DIRECT
   - RULE-SET,direct-ipcidr,DIRECT,no-resolve
   - RULE-SET,direct-classical,DIRECT
-  - RULE-SET,bh-domain,TW
-  - RULE-SET,bb-domain,DIRECT
+  - RULE-SET,yt-domain,HK
   - RULE-SET,tt-domain,US
   - RULE-SET,sp-domain,US
-  - RULE-SET,tg-ipcidr,HK
-  - RULE-SET,st-domain,DIRECT
+  - RULE-SET,tg-ipcidr,HK,no-resolve
+  - RULE-SET,gh-classical,HK
+  - RULE-SET,st-domain,HK
   - RULE-SET,gam-cn-domain,DIRECT
   - RULE-SET,gam-domain,GAM
   - RULE-SET,vdo-us-domain,US
@@ -422,18 +393,16 @@ rules:
   - RULE-SET,fin-domain,FIN
   - RULE-SET,ecm-domain,ECM
   - RULE-SET,ecm-ipcidr,ECM,no-resolve
-  - RULE-SET,ggl-hk-domain,HK
   - RULE-SET,ggl-us-domain,US
   - RULE-SET,ggl-cn-domain,DIRECT
   - RULE-SET,ggl-domain,GGL
   - RULE-SET,ggl-ipcidr,GGL,no-resolve
-  - RULE-SET,msf-hk-classical,HK
   - RULE-SET,msf-cn-domain,DIRECT
   - RULE-SET,msf-domain,MSF
   - RULE-SET,apl-ex-domain,APL
   - RULE-SET,apl-cn-domain,DIRECT
   - RULE-SET,apl-domain,APL
   - RULE-SET,apl-ipcidr,APL,no-resolve
-  - RULE-SET,fnl-direct-domain,DIRECT
-  - RULE-SET,fnl-direct-ipcidr,DIRECT,no-resolve
-  - MATCH,PRX
+  - RULE-SET,final-direct-domain,DIRECT
+  - RULE-SET,final-direct-ipcidr,DIRECT,no-resolve
+  - MATCH,PROXY
