@@ -1,4 +1,4 @@
-allow-lan: false
+allow-lan: true
 bind-address: "*"
 lan-allowed-ips: []
 lan-disallowed-ips: []
@@ -21,7 +21,7 @@ find-process-mode: strict
 external-controller: 127.0.0.1:9090
 external-controller-cors:
   allow-origins: ["*"]
-  allow-private-network: false
+  allow-private-network: true
 secret: ""
 
 external-ui: dashboard
@@ -60,9 +60,9 @@ dns:
   listen: 127.0.0.1:1053
   ipv6: false
   enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
+  fake-ip-range: 198.18.0.0/15
   fake-ip-filter:
-    - RULE-SET,fake-ip-filter,real-ip
+    - RULE-SET,fakeip-filter-domain,real-ip
     - MATCH,fake-ip
   fake-ip-filter-mode: rule
   use-hosts: true
@@ -70,12 +70,13 @@ dns:
   respect-rules: true
   default-nameserver: [system]
   nameserver-policy:
+    "rule-set:fakeip-filter-domain": [system]
     "rule-set:direct-domain": [system]
     "rule-set:final-direct-domain": [https://dns.alidns.com/dns-query]
   proxy-server-nameserver: [https://dns.alidns.com/dns-query]
   direct-nameserver: []
   direct-nameserver-follow-policy: false
-  nameserver: [https://cloudflare-dns.com/dns-query]
+  nameserver: [https://dns.alidns.com/dns-query]
   fallback: []
   fallback-filter:
     geoip: true
@@ -201,10 +202,10 @@ rule-provider-classical: &rule-provider-classical
   behavior: classical
 
 rule-providers:
-  fake-ip-filter:
+  fakeip-filter-domain:
     <<: *rule-provider-domain
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/fake-ip-filter.mrs
-    path: ./rulesets/fake-ip-filter.mrs
+    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/fakeip-filter-domain.mrs
+    path: ./rulesets/fakeip-filter-domain.mrs
 
   direct-domain:
     <<: *rule-provider-domain
@@ -226,11 +227,6 @@ rule-providers:
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/yt-domain.mrs
     path: ./rulesets/yt-domain.mrs
 
-  tt-domain:
-    <<: *rule-provider-domain
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/tt-domain.mrs
-    path: ./rulesets/tt-domain.mrs
-
   sp-domain:
     <<: *rule-provider-domain
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/sp-domain.mrs
@@ -245,11 +241,6 @@ rule-providers:
     <<: *rule-provider-classical
     url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/merged/gh-classical.yaml
     path: ./rulesets/gh-classical.yaml
-
-  st-domain:
-    <<: *rule-provider-domain
-    url: https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/mihomo/rules/compiled/st-domain.mrs
-    path: ./rulesets/st-domain.mrs
 
   gam-cn-domain:
     <<: *rule-provider-domain
@@ -376,11 +367,9 @@ rules:
   - RULE-SET,direct-ipcidr,DIRECT,no-resolve
   - RULE-SET,direct-classical,DIRECT
   - RULE-SET,yt-domain,HK
-  - RULE-SET,tt-domain,US
   - RULE-SET,sp-domain,US
   - RULE-SET,tg-ipcidr,HK,no-resolve
   - RULE-SET,gh-classical,HK
-  - RULE-SET,st-domain,HK
   - RULE-SET,gam-cn-domain,DIRECT
   - RULE-SET,gam-domain,GAM
   - RULE-SET,vdo-us-domain,US

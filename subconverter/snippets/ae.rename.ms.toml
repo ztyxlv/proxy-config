@@ -1,0 +1,319 @@
+[[rename_node]]
+match = "^(冰岛|Iceland)"
+replace = "🇮🇸 IS-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(挪威|Norway)"
+replace = "🇳🇴 NO-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(瑞士|Switzerland)"
+replace = "🇨🇭 CH-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(丹麦|Denmark)"
+replace = "🇩🇰 DK-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(德国|Germany)"
+replace = "🇩🇪 DE-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(瑞典|Sweden)"
+replace = "🇸🇪 SE-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(澳大利亚|Australia)"
+replace = "🇦🇺 AU-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(中国香港特别行政区|Hong Kong, China \\(SAR\\)|香港)"
+replace = "🇭🇰 HK-XXX MS-IEPL"
+
+[[rename_node]]
+match = "^(荷兰|Netherlands)"
+replace = "🇳🇱 NL-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(比利时|Belgium)"
+replace = "🇧🇪 BE-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(爱尔兰|Ireland)"
+replace = "🇮🇪 IE-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(芬兰|Finland)"
+replace = "🇫🇮 FI-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(新加坡|Singapore)"
+replace = "🇸🇬 SG-XXX MS-IEPL"
+
+[[rename_node]]
+match = "^(英国|United Kingdom)"
+replace = "🇬🇧 GB-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(阿拉伯联合酋长国|United Arab Emirates)"
+replace = "🇦🇪 AE-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(加拿大|Canada)"
+replace = "🇨🇦 CA-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(新西兰|New Zealand)"
+replace = "🇳🇿 NZ-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(美国|United States)"
+replace = "🇺🇸 US-XXX MS-IEPL"
+
+[[rename_node]]
+match = "^(韩国|Korea \\(Republic of\\))"
+replace = "🇰🇷 KR-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(斯洛文尼亚|Slovenia)"
+replace = "🇸🇮 SI-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(奥地利|Austria)"
+replace = "🇦🇹 AT-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(日本|Japan)"
+replace = "🇯🇵 JP-XXX MS-IEPL"
+
+[[rename_node]]
+match = "^(卢森堡|Luxembourg)"
+replace = "🇱🇺 LU-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(法国|France)"
+replace = "🇫🇷 FR-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(以色列|Israel)"
+replace = "🇮🇱 IL-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(西班牙|Spain)"
+replace = "🇪🇸 ES-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(意大利|Italy)"
+replace = "🇮🇹 IT-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(塞浦路斯|Cyprus)"
+replace = "🇨🇾 CY-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(希腊|Greece)"
+replace = "🇬🇷 GR-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(波兰|Poland)"
+replace = "🇵🇱 PL-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(爱沙尼亚|Estonia)"
+replace = "🇪🇪 EE-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(沙特阿拉伯|Saudi Arabia)"
+replace = "🇸🇦 SA-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(立陶宛|Lithuania)"
+replace = "🇱🇹 LT-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(葡萄牙|Portugal)"
+replace = "🇵🇹 PT-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(克罗地亚|Croatia)"
+replace = "🇭🇷 HR-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(拉脱维亚|Latvia)"
+replace = "🇱🇻 LV-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(卡塔尔|Qatar)"
+replace = "🇶🇦 QA-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(斯洛伐克|Slovakia)"
+replace = "🇸🇰 SK-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(智利|Chile)"
+replace = "🇨🇱 CL-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(阿根廷|Argentina)"
+replace = "🇦🇷 AR-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(乌拉圭|Uruguay)"
+replace = "🇺🇾 UY-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(阿曼|Oman)"
+replace = "🇴🇲 OM-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(土耳其|Türkiye)"
+replace = "🇹🇷 TR-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(保加利亚|Bulgaria)"
+replace = "🇧🇬 BG-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(罗马尼亚|Romania)"
+replace = "🇷🇴 RO-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(格鲁吉亚|Georgia)"
+replace = "🇬🇪 GE-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(哈萨克斯坦|Kazakhstan)"
+replace = "🇰🇿 KZ-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(哥斯达黎加|Costa Rica)"
+replace = "🇨🇷 CR-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(塞尔维亚|Serbia)"
+replace = "🇷🇸 RS-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(俄罗斯联邦|Russian Federation|俄罗斯)"
+replace = "🇷🇺 RU-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(马来西亚|Malaysia)"
+replace = "🇲🇾 MY-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(北马其顿|North Macedonia|马其顿)"
+replace = "🇲🇰 MK-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(亚美尼亚|Armenia)"
+replace = "🇦🇲 AM-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(阿尔巴尼亚|Albania)"
+replace = "🇦🇱 AL-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(泰国|Thailand)"
+replace = "🇹🇭 TH-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(秘鲁|Peru)"
+replace = "🇵🇪 PE-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(墨西哥|Mexico)"
+replace = "🇲🇽 MX-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(哥伦比亚|Colombia)"
+replace = "🇨🇴 CO-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(巴西|Brazil)"
+replace = "🇧🇷 BR-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(摩尔多瓦共和国|Moldova \\(Republic of\\)|摩尔多瓦)"
+replace = "🇲🇩 MD-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(乌克兰|Ukraine)"
+replace = "🇺🇦 UA-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(厄瓜多尔|Ecuador)"
+replace = "🇪🇨 EC-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(越南|Viet Nam)"
+replace = "🇻🇳 VN-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(埃及|Egypt)"
+replace = "🇪🇬 EG-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(南非|South Africa)"
+replace = "🇿🇦 ZA-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(乌兹别克斯坦|Uzbekistan)"
+replace = "🇺🇿 UZ-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(玻利维亚多民族国|Bolivia \\(Plurinational State of\\)|玻利维亚)"
+replace = "🇧🇴 BO-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(印度尼西亚|Indonesia)"
+replace = "🇮🇩 ID-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(菲律宾|Philippines)"
+replace = "🇵🇭 PH-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(摩洛哥|Morocco)"
+replace = "🇲🇦 MA-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(伊拉克|Iraq)"
+replace = "🇮🇶 IQ-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(孟加拉国|Bangladesh|孟加拉)"
+replace = "🇧🇩 BD-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(印度|India)"
+replace = "🇮🇳 IN-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(危地马拉|Guatemala)"
+replace = "🇬🇹 GT-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(尼泊尔|Nepal)"
+replace = "🇳🇵 NP-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(安哥拉|Angola)"
+replace = "🇦🇴 AO-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(柬埔寨|Cambodia)"
+replace = "🇰🇭 KH-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(尼日利亚|Nigeria)"
+replace = "🇳🇬 NG-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(巴基斯坦|Pakistan)"
+replace = "🇵🇰 PK-XXX MS-IEPL 01"
+
+[[rename_node]]
+match = "^(台湾|Taiwan)"
+replace = "🇹🇼 TW-XXX MS-IEPL"

@@ -24,9 +24,9 @@ function compare(a, b) {
     RU: ["MOW", "LED"]
   };
 
-  var providerPriority = ["NX", "KU"];
+  var providerPriority = ["NX", "KU", "MS"];
 
-  var qualityPriority = ["IEPL", "IPLC"];
+  var qualityPriority = ["IEPL"];
 
   function buildRank(arr, offset) {
     var map = {};

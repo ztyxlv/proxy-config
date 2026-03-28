@@ -7,10 +7,6 @@ rules:
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/youtube.list
 
-  - name: tt
-    remote:
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/tiktok.list
-
   - name: sp
     remote:
       - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/spotify.list
@@ -26,10 +22,6 @@ rules:
   - name: gh
     remote:
       - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list
-
-  - name: st
-    remote:
-      - https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/surge/speedtest.list
 
   - name: gam-cn
     remote:

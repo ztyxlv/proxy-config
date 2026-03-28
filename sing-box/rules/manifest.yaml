@@ -1,4 +1,8 @@
 rules:
+  - name: fakeip-filter
+    remote:
+      - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/fakeip-filter.json
+
   - name: direct
     include:
       - process_name:
@@ -11,10 +15,6 @@ rules:
   - name: yt
     remote:
       - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/youtube.json
-
-  - name: tt
-    remote:
-      - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/tiktok.json
 
   - name: sp
     remote:
@@ -38,10 +38,6 @@ rules:
           - myoctocat.com
       - domain_keyword:
           - github
-
-  - name: st
-    remote:
-      - https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/networktest.json
 
   - name: gam-cn
     remote:

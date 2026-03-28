@@ -8,14 +8,16 @@
   "dns": {
     "servers": [
       { "type": "local", "tag": "System" },
-      { "type": "https", "tag": "AliDNS", "server": "dns.alidns.com", "detour": "DIRECT" },
-      { "type": "https", "tag": "CloudflareDNS", "server": "cloudflare-dns.com", "detour": "PROXY" }
+      { "type": "https", "tag": "AliDNS", "server": "dns.alidns.com", "domain_resolver": "System" },
+      { "type": "fakeip", "tag": "FakeIP", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18" }
     ],
     "rules": [
+      { "rule_set": "FakeIP-Filter", "action": "route", "server": "System" },
       { "rule_set": "Direct", "action": "route", "server": "System" },
-      { "rule_set": "Final-Direct", "action": "route", "server": "AliDNS" }
+      { "rule_set": "Final-Direct", "action": "route", "server": "AliDNS" },
+      { "query_type": ["A", "AAAA"], "action": "route", "server": "FakeIP" }
     ],
-    "final": "CloudflareDNS",
+    "final": "AliDNS",
     "strategy": "ipv4_only",
     "disable_cache": false,
     "disable_expire": false,
@@ -28,11 +30,9 @@
       { "protocol": "dns", "action": "hijack-dns" },
       { "rule_set": "Direct", "action": "route", "outbound": "DIRECT" },
       { "rule_set": "YT", "action": "route", "outbound": "HK" },
-      { "rule_set": "TT", "action": "route", "outbound": "US" },
       { "rule_set": "SP", "action": "route", "outbound": "US" },
       { "rule_set": "TG", "action": "route", "outbound": "HK" },
       { "rule_set": "GH", "action": "route", "outbound": "HK" },
-      { "rule_set": "ST", "action": "route", "outbound": "HK" },
       { "rule_set": "GAM-CN", "action": "route", "outbound": "DIRECT" },
       { "rule_set": "GAM", "action": "route", "outbound": "GAM" },
       { "rule_set": "VDO-US", "action": "route", "outbound": "US" },
@@ -54,13 +54,12 @@
       { "rule_set": "Final-Direct", "action": "route", "outbound": "DIRECT" }
     ],
     "rule_set": [
+      { "type": "remote", "tag": "FakeIP-Filter", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/fakeip-filter.srs" },
       { "type": "remote", "tag": "Direct", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/direct.srs" },
       { "type": "remote", "tag": "YT", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/yt.srs" },
-      { "type": "remote", "tag": "TT", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/tt.srs" },
       { "type": "remote", "tag": "SP", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/sp.srs" },
       { "type": "remote", "tag": "TG", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/tg.srs" },
       { "type": "remote", "tag": "GH", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/gh.srs" },
-      { "type": "remote", "tag": "ST", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/st.srs" },
       { "type": "remote", "tag": "GAM-CN", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/gam-cn.srs" },
       { "type": "remote", "tag": "GAM", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/gam.srs" },
       { "type": "remote", "tag": "VDO-US", "download_detour": "DIRECT", "url": "https://raw.githubusercontent.com/ztyxlv/profiles-proxy/main/sing-box/rules/compiled/vdo-us.srs" },
@@ -101,7 +100,7 @@
       "external_ui_download_detour": "DIRECT",
       "secret": "",
       "access_control_allow_origin": ["*"],
-      "access_control_allow_private_network": false
+      "access_control_allow_private_network": true
     }
   },
   "inbounds": [
