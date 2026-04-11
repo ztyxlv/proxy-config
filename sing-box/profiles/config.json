@@ -17,7 +17,7 @@
       { "query_type": ["A", "AAAA"], "action": "route", "server": "FakeIP" }
     ],
     "final": "AliDNS",
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "disable_cache": false,
     "disable_expire": false,
     "reverse_mapping": false
