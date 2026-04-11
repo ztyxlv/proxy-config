@@ -5,16 +5,11 @@
       "domain": [
         "bybit-exchange.github.io",
         "bybit.ada.support",
-        "coinglass.com",
         "d3r7nsslvs6aaf.cloudfront.net",
         "deribit.cdn.prismic.io",
-        "intel.arkm.com",
-        "news.treeofalpha.com",
         "onekey.zendesk.com",
         "straitsx-826709081262441084-b790f87a2ae6fd417434295.freshchat.com",
-        "token-api.metaswap.codefi.network",
-        "tradingview.com",
-        "whale-alert.io"
+        "token-api.metaswap.codefi.network"
       ],
       "domain_suffix": [
         "1inch.io",
@@ -243,6 +238,7 @@
         "huobitoken.com",
         "icodrops.com",
         "infura.io",
+        "intel.arkm.com",
         "intotheblock.com",
         "invity.io",
         "ipfs.io",
@@ -273,6 +269,7 @@
         "myetherwallet.com",
         "mytokenapi.com",
         "nansen.ai",
+        "news.treeofalpha.com",
         "nexo.com",
         "nexo.io",
         "nftcalendar.io",
@@ -353,6 +350,7 @@
         "watchtheburn.com",
         "wbtc.network",
         "web3modal.org",
+        "whale-alert.io",
         "wintermute.com",
         "wise.com",
         "wisecoin.com",
