@@ -117666,6 +117666,7 @@ IP-CIDR,145.14.84.0/24,no-resolve
 IP-CIDR,145.14.86.0/24,no-resolve
 IP-CIDR,145.14.88.0/24,no-resolve
 IP-CIDR,145.14.90.0/24,no-resolve
+IP-CIDR,145.6.0.0/16,no-resolve
 IP-CIDR,146.19.167.0/24,no-resolve
 IP-CIDR,146.19.236.0/24,no-resolve
 IP-CIDR,146.196.112.0/21,no-resolve
@@ -119911,6 +119912,7 @@ IP-CIDR,204.55.160.0/24,no-resolve
 IP-CIDR,204.77.130.0/24,no-resolve
 IP-CIDR,204.79.135.24/32,no-resolve
 IP-CIDR,205.198.19.0/24,no-resolve
+IP-CIDR,206.109.75.0/24,no-resolve
 IP-CIDR,210.12.0.0/15,no-resolve
 IP-CIDR,210.14.112.0/20,no-resolve
 IP-CIDR,210.14.128.0/17,no-resolve
@@ -128768,6 +128770,7 @@ IP-CIDR6,2404:2280:21d::/48,no-resolve
 IP-CIDR6,2404:2280:21e::/48,no-resolve
 IP-CIDR6,2404:2280:221::/48,no-resolve
 IP-CIDR6,2404:2280:226::/47,no-resolve
+IP-CIDR6,2404:2280:22b::/48,no-resolve
 IP-CIDR6,2404:2280:259::/48,no-resolve
 IP-CIDR6,2404:2280:25a::/47,no-resolve
 IP-CIDR6,2404:2280:25c::/48,no-resolve
@@ -128806,6 +128809,8 @@ IP-CIDR6,2404:2280:2c9::/48,no-resolve
 IP-CIDR6,2404:2280:2ca::/47,no-resolve
 IP-CIDR6,2404:2280:2cd::/48,no-resolve
 IP-CIDR6,2404:2280:2cf::/48,no-resolve
+IP-CIDR6,2404:2280:2f1::/48,no-resolve
+IP-CIDR6,2404:2280:2f8::/48,no-resolve
 IP-CIDR6,2404:240::/32,no-resolve
 IP-CIDR6,2404:280::/32,no-resolve
 IP-CIDR6,2404:30c0::/32,no-resolve
@@ -131696,6 +131701,7 @@ IP-CIDR6,2a0f:1cc5:318::/45,no-resolve
 IP-CIDR6,2a0f:1cc5:3200::/46,no-resolve
 IP-CIDR6,2a0f:1cc5:3204::/47,no-resolve
 IP-CIDR6,2a0f:1cc5:3206::/48,no-resolve
+IP-CIDR6,2a0f:1cc5:3222::/48,no-resolve
 IP-CIDR6,2a0f:1cc5:600::/47,no-resolve
 IP-CIDR6,2a0f:1cc5:603::/48,no-resolve
 IP-CIDR6,2a0f:1cc5:645::/48,no-resolve
@@ -131724,6 +131730,7 @@ IP-CIDR6,2a0f:7802:e104::/47,no-resolve
 IP-CIDR6,2a0f:7802:e108::/48,no-resolve
 IP-CIDR6,2a0f:7802:e111::/48,no-resolve
 IP-CIDR6,2a0f:7802:e138::/48,no-resolve
+IP-CIDR6,2a0f:7803:faf3::/48,no-resolve
 IP-CIDR6,2a0f:7803:fc00::/39,no-resolve
 IP-CIDR6,2a0f:7803:ff10:2000::/51,no-resolve
 IP-CIDR6,2a0f:85c1:81b:f280::/60,no-resolve
@@ -131904,8 +131911,7 @@ IP-CIDR6,2a14:7583:f744::/48,no-resolve
 IP-CIDR6,2a14:7583:f764::/48,no-resolve
 IP-CIDR6,2a14:7583:ff84::/47,no-resolve
 IP-CIDR6,2a14:7584:e044::/48,no-resolve
-IP-CIDR6,2a14:7586:6100::/48,no-resolve
-IP-CIDR6,2a14:7586:6102::/47,no-resolve
+IP-CIDR6,2a14:7586:6100::/46,no-resolve
 IP-CIDR6,2a14:7586:6104::/48,no-resolve
 IP-CIDR6,2a14:7586:6107::/48,no-resolve
 IP-CIDR6,2a14:7586:6110::/48,no-resolve
