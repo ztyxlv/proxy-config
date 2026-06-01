@@ -28,7 +28,7 @@ def aggregate_rules:
       else . end
     );
 
-($remote[0] | map(exclude_rules($exclude))) as $filtered
+($ruleset[0] | map(exclude_rules($exclude))) as $filtered
 | ($filtered + $include) as $all
 | {
     version: 5,
