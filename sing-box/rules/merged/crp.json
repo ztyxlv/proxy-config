@@ -24,6 +24,7 @@
         "appsflayer.com",
         "apy999.com",
         "arbitrum.io",
+        "arkm.com",
         "asproex.com",
         "asproexapi.com",
         "avax.network",
@@ -238,7 +239,6 @@
         "huobitoken.com",
         "icodrops.com",
         "infura.io",
-        "intel.arkm.com",
         "intotheblock.com",
         "invity.io",
         "ipfs.io",
@@ -269,7 +269,6 @@
         "myetherwallet.com",
         "mytokenapi.com",
         "nansen.ai",
-        "news.treeofalpha.com",
         "nexo.com",
         "nexo.io",
         "nftcalendar.io",
@@ -335,6 +334,7 @@
         "traderjoexyz.com",
         "tradingview.com",
         "transferwise.com",
+        "treeofalpha.com",
         "trezor.io",
         "tronlink.org",
         "tronscan.org",
@@ -375,6 +375,10 @@
         "huobi",
         "metamask",
         "okx"
+      ],
+      "process_name": [
+        "Binance.exe",
+        "OKX.exe"
       ]
     }
   ]

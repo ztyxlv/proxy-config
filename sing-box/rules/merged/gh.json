@@ -3,18 +3,16 @@
   "rules": [
     {
       "domain_suffix": [
-        "dependabot.com",
         "ghcr.io",
-        "git.io",
-        "myoctocat.com",
-        "npm.community",
+        "github.com",
+        "github.io",
+        "githubapp.com",
+        "githubassets.com",
+        "githubcopilot.com",
+        "githubstatus.com",
+        "githubusercontent.com",
         "npmjs.com",
-        "npmjs.org",
-        "opensource.guide",
-        "repo.new"
-      ],
-      "domain_keyword": [
-        "github"
+        "npmjs.org"
       ]
     }
   ]
