@@ -7,7 +7,6 @@ DOMAIN,beatselectronicsllc.tt.omtrdc.net
 DOMAIN,cp4.cloudflare.com
 DOMAIN,e16991.b.akamaiedge.net
 DOMAIN,identity.apple.com
-DOMAIN,ingest.apple-studies.com
 DOMAIN,lookup-api.apple.com.edgekey.net
 DOMAIN,notary-submissions-prod.s3-accelerate.amazonaws.com
 DOMAIN,notary-submissions-prod.s3.us-west-2.amazonaws.com
@@ -118,6 +117,7 @@ DOMAIN-SUFFIX,apple-pay.wang
 DOMAIN-SUFFIX,apple-store.cn
 DOMAIN-SUFFIX,apple-store.net
 DOMAIN-SUFFIX,apple-store.wang
+DOMAIN-SUFFIX,apple-studies.com
 DOMAIN-SUFFIX,apple-usa.net
 DOMAIN-SUFFIX,apple-watch.com.ru
 DOMAIN-SUFFIX,apple.ae
