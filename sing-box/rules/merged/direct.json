@@ -17,7 +17,8 @@
         "sing-box-dashboard.sagernet.org",
         "www.asusrouter.com",
         "www.miwifi.com",
-        "yacd.metacubex.one"
+        "yacd.metacubex.one",
+        "zephyruso.github.io"
       ],
       "domain_regex": [
         "^[^.]+$"
