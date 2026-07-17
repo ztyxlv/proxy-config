@@ -1,116 +1,128 @@
 function compare(a, b) {
-  var countryOrder = [
-    "IS", "NO", "CH", "DK", "DE", "SE", "AU", "HK", "NL", "BE", "IE", "FI", "SG", "GB",
-    "AE", "CA", "LI", "NZ", "US", "KR", "SI", "AT", "JP", "MT", "LU", "FR", "IL", "ES",
-    "CZ", "IT", "SM", "AD", "CY", "GR", "PL", "EE", "SA", "BH", "LT", "PT", "HR", "LV",
-    "QA", "SK", "CL", "HU", "AR", "ME", "UY", "OM", "TR", "KW", "AG", "SC", "BG", "RO",
-    "GE", "KN", "PA", "BN", "KZ", "CR", "RS", "RU", "BY", "BS", "MY", "MK", "AM", "BB",
-    "AL", "TT", "MU", "BA", "IR", "VC", "TH", "CN", "PE", "GD", "AZ", "MX", "CO", "BR",
-    "PW", "MD", "UA", "EC", "DO", "GY", "LK", "TO", "MV", "VN", "TM", "DZ", "CU", "DM",
-    "PY", "EG", "JO", "LB", "LC", "MN", "TN", "ZA", "UZ", "BO", "GA", "MH", "BW", "FJ",
-    "ID", "SR", "BZ", "LY", "JM", "KG", "PH", "MA", "VE", "WS", "NI", "NR", "BT", "SZ",
-    "IQ", "TJ", "TV", "BD", "IN", "SV", "GQ", "PS", "CV", "NA", "GT", "CG", "HN", "KI",
-    "ST", "TL", "GH", "KE", "NP", "VU", "LA", "AO", "FM", "MM", "KH", "KM", "ZW", "ZM",
-    "CM", "SB", "CI", "UG", "RW", "PG", "TG", "SY", "MR", "NG", "TZ", "HT", "LS", "PK",
-    "SN", "GM", "CD", "MW", "BJ", "GW", "DJ", "SD", "LR", "ER", "GN", "ET", "AF", "MZ",
-    "MG", "YE", "SL", "BF", "BI", "ML", "NE", "TD", "CF", "SO", "SS", "KP", "MC", "TW"
-  ];
 
-  var countryPriority = ["HK", "TW", "JP", "SG", "US"];
+  if (!compare.cache) {
 
-  var cityPriority = {
-    AU: ["SYD"],
-    US: ["LAX", "SJC", "SEA"],
-    RU: ["MOW", "LED"]
-  };
+    var pinnedCountryOrder = [
+      "HK", "TW", "JP", "SG", "US"
+    ];
 
-  var providerPriority = ["NX", "MS"];
+    var defaultCountryOrder = [
+      "IS", "NO", "CH", "DK", "DE", "SE", "AU", "HK", "NL", "BE", "IE", "FI", "SG", "GB",
+      "AE", "CA", "LI", "NZ", "US", "KR", "SI", "AT", "JP", "MT", "LU", "FR", "IL", "ES",
+      "CZ", "IT", "SM", "AD", "CY", "GR", "PL", "EE", "SA", "BH", "LT", "PT", "HR", "LV",
+      "QA", "SK", "CL", "HU", "AR", "ME", "UY", "OM", "TR", "KW", "AG", "SC", "BG", "RO",
+      "GE", "KN", "PA", "BN", "KZ", "CR", "RS", "RU", "BY", "BS", "MY", "MK", "AM", "BB",
+      "AL", "TT", "MU", "BA", "IR", "VC", "TH", "CN", "PE", "GD", "AZ", "MX", "CO", "BR",
+      "PW", "MD", "UA", "EC", "DO", "GY", "LK", "TO", "MV", "VN", "TM", "DZ", "CU", "DM",
+      "PY", "EG", "JO", "LB", "LC", "MN", "TN", "ZA", "UZ", "BO", "GA", "MH", "BW", "FJ",
+      "ID", "SR", "BZ", "LY", "JM", "KG", "PH", "MA", "VE", "WS", "NI", "NR", "BT", "SZ",
+      "IQ", "TJ", "TV", "BD", "IN", "SV", "GQ", "PS", "CV", "NA", "GT", "CG", "HN", "KI",
+      "ST", "TL", "GH", "KE", "NP", "VU", "LA", "AO", "FM", "MM", "KH", "KM", "ZW", "ZM",
+      "CM", "SB", "CI", "UG", "RW", "PG", "TG", "SY", "MR", "NG", "TZ", "HT", "LS", "PK",
+      "SN", "GM", "CD", "MW", "BJ", "GW", "DJ", "SD", "LR", "ER", "GN", "ET", "AF", "MZ",
+      "MG", "YE", "SL", "BF", "BI", "ML", "NE", "TD", "CF", "SO", "SS", "KP", "MC", "TW"
+    ];
 
-  var qualityPriority = ["DDC"];
+    var pinnedCityOrder = {
+      US: ["LAX"]
+    };
 
-  function buildRank(arr, offset) {
-    var map = {};
-    for (var i = 0; i < arr.length; i++) {
-      map[arr[i]] = i + (offset || 0);
+    var defaultCityOrder = {
+      AU: ["SYD"],
+      US: ["LAX", "SJC", "SEA"],
+      RU: ["MOW", "LED"]
+    };
+
+    function mergeUnique(pinned, defaults) {
+      var result = [], seen = {};
+      var arr = (pinned || []).concat(defaults || []);
+
+      for (var i = 0; i < arr.length; i++) {
+        if (!seen[arr[i]]) {
+          seen[arr[i]] = true;
+          result.push(arr[i]);
+        }
+      }
+
+      return result;
     }
-    return map;
-  }
 
-  function getRank(map, key, fallback) {
-    return map[key] !== undefined ? map[key] : fallback;
-  }
+    function mergeCity(pinned, defaults) {
+      var result = {}, keys = {};
 
-  function getCityRank(iso, city) {
-    var arr = cityPriority[iso];
-    if (!arr) return 9999;
-    for (var i = 0; i < arr.length; i++) {
-      if (arr[i] === city) return i;
+      for (var k in pinned) keys[k] = true;
+      for (var k in defaults) keys[k] = true;
+
+      for (var country in keys) {
+        result[country] = mergeUnique(pinned[country], defaults[country]);
+      }
+
+      return result;
     }
-    return 9999;
+
+    function buildRank(list) {
+      var map = {};
+
+      for (var i = 0; i < list.length; i++) {
+        map[list[i]] = i;
+      }
+
+      return map;
+    }
+
+    compare.cache = {
+      countryRank: buildRank(
+        mergeUnique(pinnedCountryOrder, defaultCountryOrder)
+      ),
+      cityRank: {}
+    };
+
+    var cityOrder = mergeCity(
+      pinnedCityOrder,
+      defaultCityOrder
+    );
+
+
+    for (var country in cityOrder) {
+      compare.cache.cityRank[country] = buildRank(cityOrder[country]);
+    }
   }
 
-  function parse(remark) {
-    var parts = (remark || "").trim().split(/\s+/);
+  function getRank(map, key) {
+    return map[key] !== undefined ? map[key] : 99999;
+  }
 
-    var isoCity = parts[1] || "";
-    var providerQuality = parts[2] || "";
-    var indexStr = parts[3] || "";
+  function parse(name) {
 
-    var iso = "";
-    var city = "";
-    var provider = "";
-    var quality = "";
-
-    var regionParts = isoCity.split("-");
-    iso = regionParts[0] || "";
-    city = regionParts[1] || "";
-
-    var pqParts = providerQuality.split("-");
-    provider = pqParts[0] || "";
-    quality = pqParts[1] || "";
-
-    var index = parseInt(indexStr, 10);
-    if (isNaN(index)) index = 9999;
+    var parts = (name || "").trim().split(/\s+/);
+    var region = (parts[1] || "").split("-");
+    var index = parseInt(parts[2], 10);
 
     return {
-      iso: iso,
-      city: city,
-      provider: provider,
-      quality: quality,
-      index: index,
-      raw: remark || ""
+      country: region[0] || "",
+      city: region[1] || "",
+      index: isNaN(index) ? 9999 : index,
+      raw: name || ""
     };
   }
-
-  var countryRank = buildRank(countryOrder, 1000);
-  var pinnedRank = buildRank(countryPriority, 0);
-  var providerRank = buildRank(providerPriority, 0);
-  var qualityRank = buildRank(qualityPriority, 0);
 
   var A = parse(a.Remark);
   var B = parse(b.Remark);
 
-  var A_country = pinnedRank[A.iso] !== undefined
-    ? pinnedRank[A.iso]
-    : getRank(countryRank, A.iso, 99999);
+  var Acountry = getRank(compare.cache.countryRank, A.country);
+  var Bcountry = getRank(compare.cache.countryRank, B.country);
 
-  var B_country = pinnedRank[B.iso] !== undefined
-    ? pinnedRank[B.iso]
-    : getRank(countryRank, B.iso, 99999);
+  if (Acountry !== Bcountry) return Acountry < Bcountry;
 
-  if (A_country !== B_country) return A_country < B_country;
+  var Acity = compare.cache.cityRank[A.country]
+    ? getRank(compare.cache.cityRank[A.country], A.city)
+    : 99999;
 
-  var A_city = getCityRank(A.iso, A.city);
-  var B_city = getCityRank(B.iso, B.city);
-  if (A_city !== B_city) return A_city < B_city;
+  var Bcity = compare.cache.cityRank[B.country]
+    ? getRank(compare.cache.cityRank[B.country], B.city)
+    : 99999;
 
-  var A_provider = getRank(providerRank, A.provider, 9999);
-  var B_provider = getRank(providerRank, B.provider, 9999);
-  if (A_provider !== B_provider) return A_provider < B_provider;
-
-  var A_quality = getRank(qualityRank, A.quality, 9999);
-  var B_quality = getRank(qualityRank, B.quality, 9999);
-  if (A_quality !== B_quality) return A_quality < B_quality;
+  if (Acity !== Bcity) return Acity < Bcity;
 
   if (A.index !== B.index) return A.index < B.index;
 
